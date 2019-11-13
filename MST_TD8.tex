@@ -1,0 +1,197 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}\usepackage{amsmath,amssymb}
+\usepackage{dsfont}
+\usepackage[utf8]{inputenc} % entree 8 bits iso-latin1
+\usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisees
+\usepackage[french]{babel}%typo française
+\usepackage{times}
+\usepackage{slashbox}
+\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Q}{\mathbb{Q}}
+\usepackage{color}
+
+\def \I{\mathbb{I}}
+\def \N{\mathbb{N}}
+\def \R{\mathbb{R}}
+\def \M{\mathbb{M}}
+\def \Z{\mathbb{Z}}
+\def \E{\mathbb{E}}
+\def \F{\mathbb{F}}
+\def \P{\mathbb{P}}
+\def \Q{\mathbb{Q}}
+\def \D{\mathbb{D}}
+
+
+\def \Ac{{\cal A}}
+\def \Bc{{\cal B}}
+\def \Cc{{\cal C}}
+\def \Dc{{\cal D}}
+\def \Ec{{\cal E}}
+\def \Fc{{\cal F}}
+\def \Gc{{\cal G}}
+\def \Hc{{\cal H}}
+\def \Ic{{\cal I}}
+\def \Kc{{\cal K}}
+\def \Lc{{\cal L}}
+\def \Pc{{\cal P}}
+\def \Rc{{\cal R}}
+\def \Qc{{\cal Q}}
+\def \Mc{{\cal M}}
+\def \Nc{{\cal N}}
+\def \Oc{{\cal O}}
+\def \Sc{{\cal S}}
+\def \Tc{{\cal T}}
+\def \Uc{{\cal U}}
+\def \Vc{{\cal V}}
+\def \Wc{{\cal W}}
+\def \Yc{{\cal Y}}
+\def \Zc{{\cal Z}}
+\def \Xc{{\cal X}}
+
+
+
+
+
+
+\def \PI{\displaystyle\Pi}
+
+\def \Sum{\displaystyle\sum}
+\def \Prod{\displaystyle\prod}
+\def \Int{\displaystyle\int}
+\def \Frac{\displaystyle\frac}
+\def \Inf{\displaystyle\inf}
+\def \Sup{\displaystyle\sup}
+\def \Lim{\displaystyle\lim}
+\def \Liminf{\displaystyle\liminf}
+\def \Limsup{\displaystyle\limsup}
+\def \Max{\displaystyle\max}
+\def \Min{\displaystyle\min}
+
+
+
+
+\def \ni{\noindent}
+
+\def \eps{\varepsilon}
+
+
+\def \ep{\hbox{ }\hfill$\Box$}
+
+
+\def\Dt#1{\Frac{\partial #1}{\partial t}}
+\def\Dx#1{\Frac{\partial #1}{\partial x}}
+\def\Ds#1{\Frac{\partial #1}{\partial s}}
+\def\Dss#1{\Frac{\partial^2 #1}{\partial s^2}}
+\def\Dy#1{\Frac{\partial #1}{\partial y}}
+\def\Dyy#1{\Frac{\partial^2 #1}{\partial y^2}}
+\def\Dsy#1{\Frac{\partial^2 #1}{\partial s \partial y}}
+\def\Dk#1{\Frac{\partial #1}{\partial k}}
+\def\Dp#1{\Frac{\partial #1}{\partial p}}
+\def\Dkk#1{\Frac{\partial^2 #1}{\partial k^2}}
+\def\Dpp#1{\Frac{\partial^2 #1}{\partial p^2}}
+\def\Dky#1{\Frac{\partial^2 #1}{\partial k \partial y}}
+\def\Dkp#1{\Frac{\partial^2 #1}{\partial k \partial p}}
+\def\Dyp#1{\Frac{\partial^2 #1}{\partial y \partial p}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dthi#1{\Frac{\partial #1}{\partial \theta_i}}
+\def\Dthj#1{\Frac{\partial #1}{\partial \theta_j}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+\def\Dthij#1{\Frac{\partial^2 #1}{\partial \theta_i \partial \theta_j}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+
+\def\Dlam#1{\Frac{\partial #1}{\partial \lambda}}
+
+\def\reff#1{{\rm(\ref{#1})}}
+
+\def\beqs{\begin{eqnarray*}}
+\def\enqs{\end{eqnarray*}}
+\def\beq{\begin{eqnarray}}
+\def\enq{\end{eqnarray}}
+
+
+\usepackage[french]{babel}%typo française
+
+\usepackage{times}
+
+
+
+
+%%%%%\setbeamercovered{dynamic}
+
+
+
+
+
+
+\newcounter{exo}
+\def\cit{\addtocounter{exo}{-1}\refstepcounter{exo}\label}
+\def\exo{\mbox{}\\[0em]\hspace*{0em}\bf Exercice
+\addtocounter{exo}{1}\arabic{exo}.\rm\hspace{1ex}}
+
+\parindent 0pt
+
+%
+
+\begin{document}
+\centerline{\sc Modélisation statistique appliquée}  \centerline{~}
+\vskip1cm \centerline{{\bf TD 8}} \centerline{2018}
+
+\exo Test de la liaison de deux caractères : couleur des yeux et des cheveux\\
+Le tableau de contingence suivant indique le résultat de l'examen de 124 sujets, classés d'après la couleur de leurs yeux et la couleur de leurs cheveux.
+
+\begin{center}
+\begin{tabular}{||c||c|c|c|c||}
+\hline
+\hline
+\backslashbox{Couleur yeux}{Couleur cheveux}& blonds& bruns& noirs& roux\\
+\hline
+\hline
+bleus&25&9&3&7\\
+\hline
+gris ou verts&13&17&10&7\\
+\hline
+marrons&7&13&8&5\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+Tester s'il existe une liaison entre ces deux caractères.
+
+\exo Générateur aléatoire\\
+Décider, au seuil de signification de 5\% et avec le test le Kolmogorov, si les nombres suivants sont susceptibles d'être des réalisations d'une loi uniforme sur l'intervalle $[0;1]$.
+\begin{center}
+\begin{tabular}{||c|c|c|c|c|c||}
+\hline
+\hline
+0,07117832&0,03982727&0,13429693&0,61832706&0,37390333&0,37641346\\
+\hline
+0,73474129&0,89435507&0,65742160&0,03694860&0,25869665&0,46339134\\
+\hline
+0,02668867&0,34375192&0,03395492&0,43945444&0,52811985&0,88284524\\
+\hline
+0,73236028&0,76711914&&&&\\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}
+
+%\exo  (Vecteur gaussien) Soient $X$ et $Z$ deux variables
+%aléatoires réelles indépendantes, $X$ étant de loi $\Nc(0, 1)$ et
+%$Z$ de loi définie par $P(Z = 1) = P(Z = -1) = 1/2$. On pose $Y =
+%ZX$.
+%
+%\ni {\bf 1.} Déterminer la loi de Y.
+%
+%\ni {\bf 2.} Calculer $Cov(X, Y )$.
+%
+%\ni {\bf 3.} Le vecteur $(X, Y)$ est-il gaussien? Les variables
+%$X$ et $Y$ sont-elles indépendantes ?
+
+
+\end{document}

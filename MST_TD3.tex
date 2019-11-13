@@ -1,0 +1,206 @@
+% DST n1
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}\usepackage{amsmath,amssymb}
+\usepackage{dsfont}
+\usepackage[utf8]{inputenc} % entree 8 bits iso-latin1
+\usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisees
+\usepackage[french]{babel}%typo française
+\usepackage{times}
+\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Q}{\mathbb{Q}}
+
+
+\def \I{\mathbb{I}}
+\def \N{\mathbb{N}}
+\def \R{\mathbb{R}}
+\def \M{\mathbb{M}}
+\def \Z{\mathbb{Z}}
+\def \E{\mathbb{E}}
+\def \F{\mathbb{F}}
+\def \P{\mathbb{P}}
+\def \Q{\mathbb{Q}}
+\def \D{\mathbb{D}}
+
+
+\def \Ac{{\cal A}}
+\def \Bc{{\cal B}}
+\def \Cc{{\cal C}}
+\def \Dc{{\cal D}}
+\def \Ec{{\cal E}}
+\def \Fc{{\cal F}}
+\def \Gc{{\cal G}}
+\def \Hc{{\cal H}}
+\def \Ic{{\cal I}}
+\def \Kc{{\cal K}}
+\def \Lc{{\cal L}}
+\def \Pc{{\cal P}}
+\def \Qc{{\cal Q}}
+\def \Mc{{\cal M}}
+\def \Nc{{\cal N}}
+\def \Oc{{\cal O}}
+\def \Sc{{\cal S}}
+\def \Tc{{\cal T}}
+\def \Uc{{\cal U}}
+\def \Vc{{\cal V}}
+\def \Wc{{\cal W}}
+\def \Yc{{\cal Y}}
+\def \Zc{{\cal Z}}
+\def \Xc{{\cal X}}
+
+
+
+
+
+
+\def \PI{\displaystyle\Pi}
+
+\def \Sum{\displaystyle\sum}
+\def \Prod{\displaystyle\prod}
+\def \Int{\displaystyle\int}
+\def \Frac{\displaystyle\frac}
+\def \Inf{\displaystyle\inf}
+\def \Sup{\displaystyle\sup}
+\def \Lim{\displaystyle\lim}
+\def \Liminf{\displaystyle\liminf}
+\def \Limsup{\displaystyle\limsup}
+\def \Max{\displaystyle\max}
+\def \Min{\displaystyle\min}
+
+
+
+
+\def \ni{\noindent}
+
+\def \eps{\varepsilon}
+
+
+\def \ep{\hbox{ }\hfill$\Box$}
+
+
+\def\Dt#1{\Frac{\partial #1}{\partial t}}
+\def\Dx#1{\Frac{\partial #1}{\partial x}}
+\def\Ds#1{\Frac{\partial #1}{\partial s}}
+\def\Dss#1{\Frac{\partial^2 #1}{\partial s^2}}
+\def\Dy#1{\Frac{\partial #1}{\partial y}}
+\def\Dyy#1{\Frac{\partial^2 #1}{\partial y^2}}
+\def\Dsy#1{\Frac{\partial^2 #1}{\partial s \partial y}}
+\def\Dk#1{\Frac{\partial #1}{\partial k}}
+\def\Dp#1{\Frac{\partial #1}{\partial p}}
+\def\Dkk#1{\Frac{\partial^2 #1}{\partial k^2}}
+\def\Dpp#1{\Frac{\partial^2 #1}{\partial p^2}}
+\def\Dky#1{\Frac{\partial^2 #1}{\partial k \partial y}}
+\def\Dkp#1{\Frac{\partial^2 #1}{\partial k \partial p}}
+\def\Dyp#1{\Frac{\partial^2 #1}{\partial y \partial p}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dthi#1{\Frac{\partial #1}{\partial \theta_i}}
+\def\Dthj#1{\Frac{\partial #1}{\partial \theta_j}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+\def\Dthij#1{\Frac{\partial^2 #1}{\partial \theta_i \partial \theta_j}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+
+\def\Dlam#1{\Frac{\partial #1}{\partial \lambda}}
+
+\def\reff#1{{\rm(\ref{#1})}}
+
+\def\beqs{\begin{eqnarray*}}
+\def\enqs{\end{eqnarray*}}
+\def\beq{\begin{eqnarray}}
+\def\enq{\end{eqnarray}}
+
+
+
+
+
+
+%%%%%\setbeamercovered{dynamic}
+
+
+
+
+
+
+\newcounter{exo}
+\def\cit{\addtocounter{exo}{-1}\refstepcounter{exo}\label}
+\def\exo{\mbox{}\\[0em]\hspace*{0em}\bf Exercice
+\addtocounter{exo}{1}\arabic{exo}.\rm\hspace{1ex}}
+
+
+
+\begin{document}
+\centerline{\sc MSA}  \centerline{~}
+\vskip1cm \centerline{{\bf TD 3}} \centerline{2018}
+
+
+\exo On observe la r\'ealisation d'un \'echantillon $X_1,...,X_n$
+de taille $n$ de loi $P_{\theta}$ de densit\'e $$ f(x, \theta) =
+\frac{1}{\theta} (1 -x )^{\frac{1}{\theta} - 1} {\bf 1}_{]0, 1[}
+(x), \:\theta \in \R_+^*.$$
+
+1. Donner une statistique exhaustive.
+
+2. D\'eterminer l'estimateur du maximum de vraisemblance $T_n$ de
+$\theta$.
+
+3. Montrer que $-\ln(1 -X_i)$ suit une loi exponentielle dont on
+pr\'ecisera le param\`etre.
+
+4. Calculer le biais et le risque quadratique de $T_n$. Cet
+estimateur est-il convergent?
+
+
+
+\exo 1. Soit $(X_1,...,X_n)$ un \'echantillon de $n$ variables
+i.i.d. de loi de Poisson de param\`etre $\lambda$:
+
+$$P(X_1 = k) = e^{-\lambda} \frac{\lambda^k}{k!},\: ; k \in \N^*$$
+Calculer la vraisemblance de l'\'echantillon, d\'eterminer si le
+mod\`ele est exponentiel et exhiber une statistique exhaustive.
+
+2. M\^emes questions avec une loi de Pareto de param\`etres
+$\alpha$ et $\theta$ avec $\alpha > 1$, $\theta > 0$ de densit\'e
+
+$$f(x) = \frac{\alpha -1}{\theta} (\frac{\theta}{x})^{\alpha} {\bf 1}_{[\theta,
+\infty[}(x).$$
+
+3. M\^emes questions avec une loi de Weibull de param\`etres
+$\alpha$ et $\theta$ avec $\alpha > 1$, $\theta > 0$ de densit\'e
+
+$$f(x) = \alpha \theta x^{\alpha -1} e^{- \theta x^{\alpha}} 1_{[0,
+\infty[}(x).$$
+
+On distinguera le cas $\alpha$ inconnu du cas $\alpha$ connu.
+
+4. M\^emes questions avec une loi uniforme sur $[0, \theta]$ avec
+$\theta > 0$ inconnu.
+
+
+\exo Calculer l'information de Fisher dans les mod\`eles
+statistiques suivants :
+
+1. Une loi de Poisson de param\`etre $\lambda$:
+
+$$P(X_1 = k) = e^{-\lambda} \frac{\lambda^k}{k!},\: ; k \in \N^*$$
+
+2. Une loi de Pareto de param\`etres $\alpha$ et $\theta$ avec
+$\alpha > 1$, $\theta > 0$ de densit\'e
+
+$$f(x) = \frac{\alpha -1}{\theta} (\frac{\theta}{x})^{\alpha} {\bf 1}_{[\theta,
+\infty[}(x).$$
+
+3. Une loi de Weibull de param\`etres $\alpha$ et $\theta$ avec
+$\alpha
+> 1$, $\theta > 0$ de densit\'e
+
+$$f(x) = \alpha \theta x^{\alpha -1} e^{- \theta x^{\alpha}} 1_{[0,
+\infty[}(x).$$
+
+4. Une loi uniforme sur $[0; \theta]$ avec $\theta > 0$ inconnu.
+
+
+
+
+\end{document}

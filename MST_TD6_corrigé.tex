@@ -1,0 +1,400 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}\usepackage{amsmath,amssymb}
+\usepackage{dsfont}
+\usepackage[latin1]{inputenc} % entree 8 bits iso-latin1
+\usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisees
+\usepackage[french]{babel}%typo française
+\usepackage{times}
+\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Q}{\mathbb{Q}}
+\usepackage{color}
+\usepackage{pdfpages}
+
+\def \I{\mathbb{I}}
+\def \N{\mathbb{N}}
+\def \R{\mathbb{R}}
+\def \M{\mathbb{M}}
+\def \Z{\mathbb{Z}}
+\def \E{\mathbb{E}}
+\def \F{\mathbb{F}}
+\def \P{\mathbb{P}}
+\def \Q{\mathbb{Q}}
+\def \D{\mathbb{D}}
+
+
+\def \Ac{{\cal A}}
+\def \Bc{{\cal B}}
+\def \Cc{{\cal C}}
+\def \Dc{{\cal D}}
+\def \Ec{{\cal E}}
+\def \Fc{{\cal F}}
+\def \Gc{{\cal G}}
+\def \Hc{{\cal H}}
+\def \Ic{{\cal I}}
+\def \Kc{{\cal K}}
+\def \Lc{{\cal L}}
+\def \Pc{{\cal P}}
+\def \Rc{{\cal R}}
+\def \Qc{{\cal Q}}
+\def \Mc{{\cal M}}
+\def \Nc{{\cal N}}
+\def \Oc{{\cal O}}
+\def \Sc{{\cal S}}
+\def \Tc{{\cal T}}
+\def \Uc{{\cal U}}
+\def \Vc{{\cal V}}
+\def \Wc{{\cal W}}
+\def \Yc{{\cal Y}}
+\def \Zc{{\cal Z}}
+\def \Xc{{\cal X}}
+
+
+
+
+
+
+\def \PI{\displaystyle\Pi}
+
+\def \Sum{\displaystyle\sum}
+\def \Prod{\displaystyle\prod}
+\def \Int{\displaystyle\int}
+\def \Frac{\displaystyle\frac}
+\def \Inf{\displaystyle\inf}
+\def \Sup{\displaystyle\sup}
+\def \Lim{\displaystyle\lim}
+\def \Liminf{\displaystyle\liminf}
+\def \Limsup{\displaystyle\limsup}
+\def \Max{\displaystyle\max}
+\def \Min{\displaystyle\min}
+
+
+
+
+\def \ni{\noindent}
+
+\def \eps{\varepsilon}
+
+
+\def \ep{\hbox{ }\hfill$\Box$}
+
+
+\def\Dt#1{\Frac{\partial #1}{\partial t}}
+\def\Dx#1{\Frac{\partial #1}{\partial x}}
+\def\Ds#1{\Frac{\partial #1}{\partial s}}
+\def\Dss#1{\Frac{\partial^2 #1}{\partial s^2}}
+\def\Dy#1{\Frac{\partial #1}{\partial y}}
+\def\Dyy#1{\Frac{\partial^2 #1}{\partial y^2}}
+\def\Dsy#1{\Frac{\partial^2 #1}{\partial s \partial y}}
+\def\Dk#1{\Frac{\partial #1}{\partial k}}
+\def\Dp#1{\Frac{\partial #1}{\partial p}}
+\def\Dkk#1{\Frac{\partial^2 #1}{\partial k^2}}
+\def\Dpp#1{\Frac{\partial^2 #1}{\partial p^2}}
+\def\Dky#1{\Frac{\partial^2 #1}{\partial k \partial y}}
+\def\Dkp#1{\Frac{\partial^2 #1}{\partial k \partial p}}
+\def\Dyp#1{\Frac{\partial^2 #1}{\partial y \partial p}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dthi#1{\Frac{\partial #1}{\partial \theta_i}}
+\def\Dthj#1{\Frac{\partial #1}{\partial \theta_j}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+\def\Dthij#1{\Frac{\partial^2 #1}{\partial \theta_i \partial \theta_j}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+
+\def\Dlam#1{\Frac{\partial #1}{\partial \lambda}}
+
+\def\reff#1{{\rm(\ref{#1})}}
+
+\def\beqs{\begin{eqnarray*}}
+\def\enqs{\end{eqnarray*}}
+\def\beq{\begin{eqnarray}}
+\def\enq{\end{eqnarray}}
+
+
+\usepackage[french]{babel}%typo française
+
+\usepackage{times}
+
+
+
+
+%%%%%\setbeamercovered{dynamic}
+
+
+
+
+
+
+\newcounter{exo}
+\def\cit{\addtocounter{exo}{-1}\refstepcounter{exo}\label}
+\def\exo{\mbox{}\\[0em]\hspace*{0em}\bf Exercice
+\addtocounter{exo}{1}\arabic{exo}.\rm\hspace{1ex}}
+
+\parindent 0pt
+
+%
+
+\begin{document}
+\centerline{\sc \'Etude de Cas} \vspace{5mm} \centerline{{\bf Corrigé du TD
+6}} \centerline{Mars 2011}
+
+\exo (pas de corrigé) Soit $(X_n, n \geq 1)$, une suite de
+variables aléatoires indépendantes, de loi normale $N(\theta,
+\theta)$, avec $\theta> 0$. L'objectif de cet exercice est de
+présenter deux tests pour déterminer si pour une valeur déterminée
+$\theta_0 > 0$, on a $\theta = \theta_0$ (hypothèse $H_0$) ou
+$\theta > \theta_0$ (hypothèse $H_1$). On note
+$$ \bar X_n = \frac{1}{n} \Sum_{i=1}^n X_i,\: \; V_{n} =
+\frac{1}{n-1}\Sum_{i=1}^n (X_i - \bar X_n)^2 \;=\;
+\frac{1}{n-1}\Sum_{i=1}^n X_i^2 - \frac{n}{n-1} \bar X_n^2
+$$
+\ni {\bf 1.} Déterminer $\hat \theta_n$, l'estimateur du maximum
+de vraisemblance de $\theta$. Montrer directement qu'il est
+convergent, asymptotiquement normal et donner sa variance
+asymptotique. Est-il asymptotiquement efficace ?
+
+\vspace{1mm}
+
+\ni {\bf 2.} Construire un test asymptotique convergent à l'aide
+de l'estimateur du maximum de vraisemblance.
+
+\vspace{1mm}
+
+\ni On considère la classe des estimateurs $T_n^{\lambda}$ de la
+forme $T_n^{\lambda} = \lambda \bar X_n + (1- \lambda) V_n$.
+
+\vspace{1mm}
+
+ \ni {\bf 3.} Montrer que la suite d'estimateurs
+$(T^{\lambda}_n, n \geq 2)$ est convergente, sans biais. Donner la
+variance de $T^{\lambda}_n$ .
+
+
+
+\exo L'information dans une direction de l'espace prise par un
+radar de surveillance aérienne se présente sous la forme d'un
+n-échantillon $X = (X_1,...,X_n)$ de variables aléatoires
+indépendantes de même loi gaussienne de moyenne $\theta$,
+paramètre inconnu, et de variance $\sigma^2$ connu. On notera
+$f(x,\theta)$,$x \in \R^n$ la densité du vecteur aléatoire.
+
+\vspace{1mm}
+
+\ni En l'absence de tout Objet Volant (Hypothèse $H_0$) $\theta =
+\theta_0 \in \R^+$, sinon (Hypothèse $H_1$),$\theta = \theta_1$,
+avec $\theta_1 > \theta_0$.
+
+\vspace{1mm}
+
+\ni {\bf 1. En utilisant Neyman-Pearson, construire un test de
+l'hypothèse $\theta = \theta_0$ contre l'hypothèse $\theta =
+\theta_1$ de niveau $\alpha$.}
+
+\vspace{1mm}
+
+On calcule d'abord le rapport de vraisemblance:
+
+\beqs \frac{L(x,\theta_1)}{L(x,\theta_0)} = \exp \left(-
+\Sum_{i=1}^n \frac{(x_i - \theta_1)^2 - (x_i - \theta_0)^2}{2
+\sigma^2} \right) = \exp \left(M \frac{\sqrt{n} (\bar x_n -
+\theta_0)}{\sigma}   - \frac{1}{2} M^2 \right)
+ \enqs
+avec $M = \frac{\sqrt{n} (\theta_1 - \theta_0)}{\sigma}$. La
+région critique optimale est donc de la forme:
+
+$$W_{\alpha} = \left\{(x_1,...,x_n), \frac{\sqrt{n} (\bar x_n -
+\theta_0)}{\sigma} > k_{\alpha} \right\}$$
+
+On obtient ainsi la statistique de test $\frac{\sqrt{n} (\bar X_n
+- \theta_0)}{\sigma}$ qui suit, sous $H_0$, la loi gaussienne
+$\Nc(0,1)$. On doit donc choisir $k_{\alpha}$ tel que $\alpha =
+P_{\theta_0}(W_{\alpha})$. On obtient donc $k_{\alpha} =
+\phi^{-1}(1- \alpha)$ avec $\phi$ la fonction de répartition de la
+gaussienne centrée réduite.
+
+Remarque: La région critique est indépendante de la valeur de
+$\theta_1$ (avec $\theta_1 > \theta_0$. Ce test est donc aussi un
+test de niveau $\alpha$ pour tester $\{\theta = \theta_0\}$ contre
+$\{\theta > \theta_0 \}$.
+
+
+ {\bf 2. Quelle est la plus petite valeur de $n$
+permettant de construire un test de niveau $\alpha$, $\alpha \in
+[0, 1]$ et d'erreur de deuxième espèce inférieure ou égale à
+$\beta$, $\beta \in [0, 1]$, avec $\alpha < \beta$?}
+
+\vspace{1mm} Sous $H_1$, i.e. $\theta= \theta_1$, $\frac{\sqrt{n}
+(\bar X_n - \theta_0)}{\sigma} - M $ suit la loi $\Nc(0,1)$.
+L'erreur de deuxième espèce est donnée par
+
+\beqs  P_{\theta_1}(\bar W_{\alpha}) &=&
+P_{\theta_1}\left(\frac{\sqrt{n} (\bar X_n - \theta_0)}{\sigma} <
+k_{\alpha}\right)\\
+&=&  P_{\theta_1}\left(\frac{\sqrt{n} (\bar X_n -
+\theta_0)}{\sigma} - M < k_{\alpha} - M\right) \leq \beta \enqs On
+veut que l'erreur de deuxième espèce $\leq \beta$. Donc,
+
+\beqs P_{\theta_1}\left(\frac{\sqrt{n} (\bar X_n -
+\theta_0)}{\sigma} -
+M < k_{\alpha} - M\right) &\leq& \beta \\
+\hbox{d'où} \hspace{5mm} k_{\alpha} - M  &\leq& \phi^{-1}(\beta)
+\enqs Autrement dit: \beqs \frac{\sqrt{n} (\theta_1 -
+\theta_0)}{\sigma} &>& k_{\alpha} -
+\phi^{-1}(\beta) \\
+n &\geq & \sigma^2 \frac{\left[  \phi^{-1}(1- \alpha) -
+\phi^{-1}(\beta) \right]^2}{(\theta_1 - \theta_0)^2} \enqs
+
+\vspace{1mm}
+
+
+{\bf 3. Supposons maintenant qu'en presence d'objet volant
+l'information fournie par le radar est un n-échantillon $X =
+(X_1,...,X_n)$ de variables aléatoires indépendantes de même loi
+gaussienne de moyenne $\theta \neq \theta_0$, $\theta \in \R$ et
+de variance $\sigma^2$. Peut-on construire un test de l'hypothèse
+$\theta = \theta_0$ contre l'hypothèse $\theta \neq \theta_0$ de
+niveau $\alpha$ donné uniformément plus puissant?}
+
+
+\vspace{1mm}
+
+C'est un test bilatéral, la même méthode s'applique! On a donc la
+même statistique de test mais la région de rejet est de la forme:
+
+$$W_{\alpha} = \left\{(x_1,...,x_n), k_{(\alpha,1)} < \frac{\sqrt{n} (\bar x_n -
+\theta_0)}{\sigma} < k_{(\alpha,2)} \right\}$$
+
+
+\exo Une agence de voyage souhaite cibler sa clientèle. Elle sait
+que les coordonnées du lieu de vie d'un client $(X,Y)$ rapportées
+au lieu de naissance $(0,0)$ sont une information significative
+pour connaître le goût de ce client. Elle distingue :
+
+
+\vspace{1mm}
+
+\ni - La population 1 (Hypothèse $H_0$) dont la loi de répartition
+a pour densité : \beqs p_1(x,y) = \frac{1}{2 \pi}
+e^{-\frac{x^2+y^2}{2}} \enqs
+
+\vspace{1mm}
+
+\ni - La population 2 (Hypothèse $H_1$) dont la loi de répartition
+a pour densité : \beqs p_2(x,y) = \frac{1}{16} {\bf 1}_{[-2,2]}(x)
+{\bf 1}_{[-2,2]}(y) \enqs
+
+\vspace{1mm}
+
+\ni L'agence souhaite tester l'hypothèse qu'un nouveau client
+vivant en $(x, y)$ appartient à la population 1 plutôt qu'à la
+population 2.
+
+\vspace{2mm}
+
+\ni {\bf 1. Proposer un test de niveau inférieur à $\alpha = 5\%$
+et de puissance maximale, construit à partir du rapport de
+vraisemblance.}
+
+\vspace{1mm}
+
+Cet exemple rentre dans le cadre du Lemme de Neyman-Pearson. On
+définit la région critique du test : $$A_{\alpha}  = \left\{(x, y)
+\in  \R^2; \frac{p_2(x, y)}{p_1(x, y)} > ka\right\}.$$ On obtient
+$$A_{\alpha}  = \left\{(x, y)
+\in  \R^2 \cap ([-2; 2] \times [-2; 2]) ; x^2 + y^2
+> ka \right\}.$$
+Sous $H_0$, $X^2+Y^2$ suit une loi du $\chi^2_ 2$ (à 2 degrés de
+liberté). On a $5\% = P(\chi^2_2) = 5.99)$. Soit $\alpha$ tel que
+$K_{\alpha} = 5.99$. On en déduit donc que $P_{H_0}(A_{\alpha}) =
+\alpha = 5\%$.
+
+\vspace{2mm}
+
+
+
+\ni {\bf 2. Donner une statistique de test et caractériser
+graphiquement la région critique dans $\R^2$.}
+
+\vspace{1mm}
+
+
+Une statistique de test est $X^2 + Y^2$. La région critique est
+l'intersection de l'extérieur du cercle de rayon $\sqrt{5.99}$
+avec le carré $[-2; 2] \times [-2; 2]$.
+
+
+
+\exo Soit $X_1,...,X_n$ un n-échantillon de loi exponentielle de
+paramètre $\frac{1}{\theta} > 0$.
+
+\vspace{1mm}
+
+\ni {\bf  1. Construire le test de niveau $\alpha$ $H_0 = \{\theta
+= \theta_0\}$ contre $H_1 = \{\theta > \theta_0\}$.}
+
+\vspace{1mm}
+
+La méthode à utiliser pour construire un test unilatéral est la
+même que pour un test simple, à savoir la méthode de
+Neyman-Pearson. Soit un certain $\theta' > \theta$. On étudie le
+rapport de vraisemblance:
+
+\beqs \frac{p_n(x_1,...,x_n, \theta')}{p_n(x_1,...,x_n, \theta_0)}
+= \left(\frac{\theta_0}{\theta'}\right)^n \exp
+\left\{-\left(\frac{1}{\theta'} - \frac{1}{\theta_0} \right)
+\Sum_{i=1}^n x_i \right\} \enqs
+
+Appliquant le Théorème de Neyman-Pearson, on obtient que la région
+de rejet optimale de niveau $\alpha$, $W_{\alpha}$, est de la
+forme:
+
+\beqs W_{\alpha} &=& \left\{(x_1,...,x_n); \frac{p_n(x_1,...,x_n,
+\theta')}{p_n(x_1,...,x_n, \theta')} > k_{\alpha} \right\} \\
+&=& \left\{(x_1,...,x_n); \Sum_{i=1}^n x_i > C_{\alpha} \right\}
+\enqs où $\alpha = P_{\theta_0}(W_{\alpha})$. On déduit également
+la statistique de test $\Sum_{i=1}^n X_i$ qui suit, sous $H_0$, la
+loi gamma $\Gamma(n,\frac{1}{\theta_0})$. Donc,
+$\frac{2}{\theta_0} \sum_{i=1}^n X_i$ suit la loi Gamma $\Gamma(n,
+\frac{1}{2})$, i.e. la loi du $\chi^2$ à $2n$ degrés de liberté
+(toujours sous l'hypothèse nulle). Donc, on peut déterminer
+$C_{\alpha}$: \beqs \alpha = P_{\theta_0}\left(W_{\alpha}) =
+P_{\theta_0}( \Sum_{i=1}^n X_i > C_{\alpha}\right) = P_{\theta_0}
+\left( \frac{2}{\theta_0}\Sum_{i=1}^n X_i > \frac{2}{\theta_0}
+C_{\alpha}\right) \enqs Donc, $\frac{2}{\theta_0} C_{\alpha} =
+F^{-1}_{\chi^2_{2n}}(1-\alpha)$. On obtient donc la région
+critique:
+
+\beqs W_{\alpha} &=& \left\{(x_1,...,x_n); \Sum_{i=1}^n x_i >
+\frac{\theta_0}{2} F^{-1}_{\chi^2_{2n}}(1-\alpha) \right\} \enqs
+
+
+\ni {\bf 2. Construire le test de niveau $\alpha$, $H_0 = \{\theta
+= \theta_0\}$ contre $H_1 = \{\theta \neq \theta_0\}$.}
+
+\vspace{1mm}
+
+La région critique optimale du test bilatéral de niveau $\alpha$
+est donnée par :
+
+\beqs W_{\alpha} &=& \left\{(x_1,...,x_n); \Sum_{i=1}^n x_i < k_1,
+\Sum_{i=1}^n x_i > k_2 \right\} \enqs avec $k_1$ et $k_2$ tels que
+$\alpha = P_{\theta_0}(W_{\alpha})$.
+
+\beqs 1- \alpha &=& P_{\theta_0}\left(k_1< \Sum_{i=1}^n X_i <
+k_2\right)\\
+&=& P_{\theta_0}\left(\frac{2}{\theta_0} k_1<
+\frac{2}{\theta_0}\Sum_{i=1}^n X_i < \frac{2}{\theta_0}k_2\right)
+ \enqs
+
+Sous $h_0$, $\frac{2}{\theta_0} \sum_{i=1}^n X_i$ suit la loi
+$\chi^2_{2n}$, on choisit donc $\frac{2}{\theta_0} k_1 =
+F^{-1}_{\chi^2_{2n}}(\alpha_1)$ et $\frac{2}{\theta_0} k_2 =
+F^{-1}_{\chi^2_{2n}}(1-\alpha_2)$, avec $\alpha_1 + \alpha_2 =
+\alpha$. Un choix classique consiste à prendre $\alpha_1 =
+\alpha_2 = \frac{\alpha}{2}$.
+
+\includepdf{1052_001.pdf}
+
+\end{document}

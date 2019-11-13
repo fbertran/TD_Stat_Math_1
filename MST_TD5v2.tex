@@ -1,0 +1,224 @@
+% DST n1
+% DST n1
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}\usepackage{amsmath,amssymb}
+\usepackage{dsfont}
+\usepackage[utf8]{inputenc} % entree 8 bits iso-latin1
+\usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisees
+\usepackage[french]{babel}%typo française
+\usepackage{times}
+\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Q}{\mathbb{Q}}
+
+
+\def \I{\mathbb{I}}
+\def \N{\mathbb{N}}
+\def \R{\mathbb{R}}
+\def \M{\mathbb{M}}
+\def \Z{\mathbb{Z}}
+\def \E{\mathbb{E}}
+\def \F{\mathbb{F}}
+\def \P{\mathbb{P}}
+\def \Q{\mathbb{Q}}
+\def \D{\mathbb{D}}
+
+
+\def \Ac{{\cal A}}
+\def \Bc{{\cal B}}
+\def \Cc{{\cal C}}
+\def \Dc{{\cal D}}
+\def \Ec{{\cal E}}
+\def \Fc{{\cal F}}
+\def \Gc{{\cal G}}
+\def \Hc{{\cal H}}
+\def \Ic{{\cal I}}
+\def \Kc{{\cal K}}
+\def \Lc{{\cal L}}
+\def \Pc{{\cal P}}
+\def \Qc{{\cal Q}}
+\def \Mc{{\cal M}}
+\def \Nc{{\cal N}}
+\def \Oc{{\cal O}}
+\def \Sc{{\cal S}}
+\def \Tc{{\cal T}}
+\def \Uc{{\cal U}}
+\def \Vc{{\cal V}}
+\def \Wc{{\cal W}}
+\def \Yc{{\cal Y}}
+\def \Zc{{\cal Z}}
+\def \Xc{{\cal X}}
+
+
+
+
+
+
+\def \PI{\displaystyle\Pi}
+
+\def \Sum{\displaystyle\sum}
+\def \Prod{\displaystyle\prod}
+\def \Int{\displaystyle\int}
+\def \Frac{\displaystyle\frac}
+\def \Inf{\displaystyle\inf}
+\def \Sup{\displaystyle\sup}
+\def \Lim{\displaystyle\lim}
+\def \Liminf{\displaystyle\liminf}
+\def \Limsup{\displaystyle\limsup}
+\def \Max{\displaystyle\max}
+\def \Min{\displaystyle\min}
+
+
+
+
+\def \ni{\noindent}
+
+\def \eps{\varepsilon}
+
+
+\def \ep{\hbox{ }\hfill$\Box$}
+
+
+\def\Dt#1{\Frac{\partial #1}{\partial t}}
+\def\Dx#1{\Frac{\partial #1}{\partial x}}
+\def\Ds#1{\Frac{\partial #1}{\partial s}}
+\def\Dss#1{\Frac{\partial^2 #1}{\partial s^2}}
+\def\Dy#1{\Frac{\partial #1}{\partial y}}
+\def\Dyy#1{\Frac{\partial^2 #1}{\partial y^2}}
+\def\Dsy#1{\Frac{\partial^2 #1}{\partial s \partial y}}
+\def\Dk#1{\Frac{\partial #1}{\partial k}}
+\def\Dp#1{\Frac{\partial #1}{\partial p}}
+\def\Dkk#1{\Frac{\partial^2 #1}{\partial k^2}}
+\def\Dpp#1{\Frac{\partial^2 #1}{\partial p^2}}
+\def\Dky#1{\Frac{\partial^2 #1}{\partial k \partial y}}
+\def\Dkp#1{\Frac{\partial^2 #1}{\partial k \partial p}}
+\def\Dyp#1{\Frac{\partial^2 #1}{\partial y \partial p}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dthi#1{\Frac{\partial #1}{\partial \theta_i}}
+\def\Dthj#1{\Frac{\partial #1}{\partial \theta_j}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+\def\Dthij#1{\Frac{\partial^2 #1}{\partial \theta_i \partial \theta_j}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+
+\def\Dlam#1{\Frac{\partial #1}{\partial \lambda}}
+
+\def\reff#1{{\rm(\ref{#1})}}
+
+\def\beqs{\begin{eqnarray*}}
+\def\enqs{\end{eqnarray*}}
+\def\beq{\begin{eqnarray}}
+\def\enq{\end{eqnarray}}
+
+
+
+
+
+
+%%%%%\setbeamercovered{dynamic}
+
+
+
+
+
+
+\newcounter{exo}
+\def\cit{\addtocounter{exo}{-1}\refstepcounter{exo}\label}
+\def\exo{\mbox{}\\[0em]\hspace*{0em}\bf Exercice
+\addtocounter{exo}{1}\arabic{exo}.\rm\hspace{1ex}}
+
+%\parindent 0pt
+
+%
+
+\begin{document}
+\centerline{\sc MSA}  \centerline{~}
+\vskip1cm \centerline{{\bf TD 5}} \centerline{2018}
+
+\exo Soit $X$ une v.a. de densité : $$f(x) = \frac{1}{2}
+e^{-|x-\theta|}, x \in  \R$$ où $\theta$ est un paramètre réel
+inconnu.
+
+\vspace{2mm}
+
+1. Calculer $E_{\theta}[X]$ et $\hbox{Var}_{\theta}[X]$. En
+déduire un estimateur $T_n$ de $\theta$.
+
+\vspace{2mm}
+
+2. Construire un intervalle de confiance de niveau asymptotique
+$95\%$ pour $\theta$ dans le cas où $n = 200$.
+
+
+\exo On rappelle que dans le modèle uniforme $\Pc = \{\Uc [0,
+\theta], \theta >0 \}$, l'Estimateur du Maximum de Vraisemblance
+de $\theta$ est $\hat \theta_n = \max(X_1,...,X_n).$
+
+\vspace{2mm}
+
+{\bf 1.} Pour $x \in \R$, calculer $\P_{\theta}(\frac{\hat
+\theta_n}{\theta} \leq x)$ et en déduire que la loi de $\frac{\hat
+\theta_n}{\theta}$ ne dépend pas de $\theta$.
+
+\vspace{2mm}
+
+{\bf 2.} Construire un intervalle de confiance de niveau $1 -
+\alpha$ pour $\theta$.
+
+\exo Soit $X_1,...,X_n$ un échantillon de loi
+$$ f(x, \theta) \;=\; e^{-(x- \theta)} {\bf 1}_{[\theta, \infty[}(x)$$
+
+\vspace{2mm}
+
+1. Donner la vraisemblance associée à l'échantillon ci-dessus.
+
+\vspace{2mm}
+
+2. Déterminer l'estimateur du maximum de vraisemblance $\hat
+\theta_n$.
+
+\vspace{2mm}
+
+3. Déterminer la loi de $\hat \theta_n$. Est-il un estimateur sans
+biais? asymptotiquement sans biais?
+
+\vspace{2mm}
+
+4. Montrer que $T_n = \hat \theta_n - \theta$ est une statistique
+libre pour $\theta$. Déterminer sa loi.
+
+\vspace{2mm}
+
+5. Construire un intervalle de confiance de $\theta$ à un niveau
+de confiance $\alpha \in [0,1]$.
+
+\vspace{2mm}
+
+6. Montrer que $\hat T_n = n \left(1 - e^{-(\hat \theta_n -
+\theta)} \right)$ est une statistique libre pour $\theta$.
+Déterminer sa loi.
+
+\vspace{2mm}
+
+7. En déduire un intervalle de confiance asymptotique pour
+$\theta$ avec un niveau de confiance $\alpha$.
+
+
+\exo Les lecteurs de tension art\'erielle systolique (TAS) (en mm Hg) sur un individu \a la m\^eme heure pendant 7 jours cons\'ecutifs ont fournis les donn\'ees suivantes
+\[
+ \begin{array}{c*{8}c}
+{\rm jour}  &  1   & 2  & 3   &  4    & 5  & 6  & 7  \\
+ x_i &  161 & 155   & 142  &157  & 150  &  192 & 156 
+ \end{array}  
+\]
+\begin{enumerate}
+\item Calculer la moyenne empirique et la m\'ediane de l'\'echantillon.
+\item En faisant l'hypoth\`ese que la mesure de tension $X$ suit une loi $\mathcal{N}(\mu,\sigma^2)$, avec $\sigma^2=100$, donner un intervalle de confiance (IC) (bilat\'eral) \`a $95 \%$ pour $\mu$.
+\item Combien de jours faut-il observer la TSA pour que la longueur de l'IC \`a $95\%$ n'exc\`ede pas 5mm de Hg.
+\item Que devient l'IC calcul\'e pour r\'epondre \`a  la question  $(b)$ si on suppose que $\sigma^2$ est inconnue.
+\item Donner un intervalle de confiance unilat\'eral (de la forme $[0,U]$) \`a $95\%$ sur $\sigma^2$ en supposant $\mu=160$, puis en supposant $\mu$ inconnu.
+\end{enumerate}
+
+\end{document}

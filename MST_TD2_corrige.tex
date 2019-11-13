@@ -1,0 +1,398 @@
+% DST n1
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}\usepackage{amsmath,amssymb}
+\usepackage{dsfont}
+\usepackage[utf8]{inputenc} % entree 8 bits iso-latin1
+\usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisees
+\usepackage[french]{babel}%typo française
+\usepackage{times}
+\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Q}{\mathbb{Q}}
+
+
+\def \I{\mathbb{I}}
+\def \N{\mathbb{N}}
+\def \R{\mathbb{R}}
+\def \M{\mathbb{M}}
+\def \Z{\mathbb{Z}}
+\def \E{\mathbb{E}}
+\def \F{\mathbb{F}}
+\def \P{\mathbb{P}}
+\def \Q{\mathbb{Q}}
+\def \D{\mathbb{D}}
+
+
+\def \Ac{{\cal A}}
+\def \Bc{{\cal B}}
+\def \Cc{{\cal C}}
+\def \Dc{{\cal D}}
+\def \Ec{{\cal E}}
+\def \Fc{{\cal F}}
+\def \Gc{{\cal G}}
+\def \Hc{{\cal H}}
+\def \Ic{{\cal I}}
+\def \Kc{{\cal K}}
+\def \Lc{{\cal L}}
+\def \Pc{{\cal P}}
+\def \Qc{{\cal Q}}
+\def \Mc{{\cal M}}
+\def \Nc{{\cal N}}
+\def \Oc{{\cal O}}
+\def \Sc{{\cal S}}
+\def \Tc{{\cal T}}
+\def \Uc{{\cal U}}
+\def \Vc{{\cal V}}
+\def \Wc{{\cal W}}
+\def \Yc{{\cal Y}}
+\def \Zc{{\cal Z}}
+\def \Xc{{\cal X}}
+
+
+
+
+
+
+\def \PI{\displaystyle\Pi}
+
+\def \Sum{\displaystyle\sum}
+\def \Prod{\displaystyle\prod}
+\def \Int{\displaystyle\int}
+\def \Frac{\displaystyle\frac}
+\def \Inf{\displaystyle\inf}
+\def \Sup{\displaystyle\sup}
+\def \Lim{\displaystyle\lim}
+\def \Liminf{\displaystyle\liminf}
+\def \Limsup{\displaystyle\limsup}
+\def \Max{\displaystyle\max}
+\def \Min{\displaystyle\min}
+
+
+
+
+\def \ni{\noindent}
+
+\def \eps{\varepsilon}
+
+
+\def \ep{\hbox{ }\hfill$\Box$}
+
+
+\def\Dt#1{\Frac{\partial #1}{\partial t}}
+\def\Dx#1{\Frac{\partial #1}{\partial x}}
+\def\Ds#1{\Frac{\partial #1}{\partial s}}
+\def\Dss#1{\Frac{\partial^2 #1}{\partial s^2}}
+\def\Dy#1{\Frac{\partial #1}{\partial y}}
+\def\Dyy#1{\Frac{\partial^2 #1}{\partial y^2}}
+\def\Dsy#1{\Frac{\partial^2 #1}{\partial s \partial y}}
+\def\Dk#1{\Frac{\partial #1}{\partial k}}
+\def\Dp#1{\Frac{\partial #1}{\partial p}}
+\def\Dkk#1{\Frac{\partial^2 #1}{\partial k^2}}
+\def\Dpp#1{\Frac{\partial^2 #1}{\partial p^2}}
+\def\Dky#1{\Frac{\partial^2 #1}{\partial k \partial y}}
+\def\Dkp#1{\Frac{\partial^2 #1}{\partial k \partial p}}
+\def\Dyp#1{\Frac{\partial^2 #1}{\partial y \partial p}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dthi#1{\Frac{\partial #1}{\partial \theta_i}}
+\def\Dthj#1{\Frac{\partial #1}{\partial \theta_j}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+\def\Dthij#1{\Frac{\partial^2 #1}{\partial \theta_i \partial \theta_j}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+
+\def\Dlam#1{\Frac{\partial #1}{\partial \lambda}}
+
+\def\reff#1{{\rm(\ref{#1})}}
+
+\def\beqs{\begin{eqnarray*}}
+\def\enqs{\end{eqnarray*}}
+\def\beq{\begin{eqnarray}}
+\def\enq{\end{eqnarray}}
+
+
+
+
+
+
+%%%%%\setbeamercovered{dynamic}
+
+
+
+
+
+
+\newcounter{exo}
+\def\cit{\addtocounter{exo}{-1}\refstepcounter{exo}\label}
+\def\exo{\mbox{}\\[0em]\hspace*{0em}\bf Exercice
+\addtocounter{exo}{1}\arabic{exo}.\rm\hspace{1ex}}
+
+
+
+\begin{document}
+\centerline{\sc \'Etude de Cas}  \centerline{~}
+\vskip1cm \centerline{{\bf Corrigé du TD 2}} \centerline{Février 2011}
+
+
+\exo Un estimateur linéaire et sans biais de $\theta$ s'écrit
+sous la forme
+
+$$\hat \theta_n = \Sum_{i=1}^n a_i X_i, \; \hbox{avec}\; \sum_{i=1}^n a_i = 1.$$
+Comme les variables aléatoires sont indépendantes, on a
+$$\hbox{Var}({\hat \theta_n}) = \Sum_{i= 1}^{n} a_i^2 \sigma^2 = \sigma^2 \Sum_{i= 1}^{n} a_i^2,
+\: \hbox{avec}\:  \sigma^2 = \hbox{Var}(X_1).$$ Notre but ici est
+de trouver un estimateur linéaire ayant la variance la plus faible
+possible, donc chercher la/les $(a_1,...,a_n)$ qui minimise
+$\hbox{Var}({\hat \theta_n})$.
+
+\ni  D'après l'inégalité de Cauchy-Schwarz, on a
+$$\left( \sum_{i=1}^n  a_i^2 \right)\left( \sum_{i=1}^n
+\frac{1}{n^2} \right) \geq \left( \sum_{i=1}^n \frac{a_i}{n}
+\right)^2$$
+
+\ni Puisque $\sum_{i=1}^n a_i = 1$, on déduit que $\sum_{i=1}^n
+a_i^2 \geq \frac{1}{n}$ avec égalité si et seulement si $a_i =
+ \frac{1}{n}$ pour tout $i \in \{1,..., n\}$.
+ L'estimateur de variance minimale dans la classe des estimateurs
+linéaires et sans biais est donc la moyenne empirique.
+
+\vspace{3mm}
+
+\ni {\bf Remarque}: Ici, pour trouver les $(a_1,...,a_n)$ qui
+minimisent $\hbox{Var}({\hat \theta_n})$, on aurait pu chercher
+les candidats $(a_1,...,a_n)$ parmi ceux qui annulent les dérivées
+partielles $\frac{\partial \hbox{Var}(X_1) }{\partial a_i}$. Mais
+pour cela, on doit d'abord se débarrasser de la contrainte
+$\sum_{i=1}^n a_i = 1$, en exprimant $a_n = 1 - \sum_{i=1}^{n-1}
+a_i$ et en injectant cette expression de $a_n$ dans celle de
+$\hbox{Var}({\hat \theta_n})$, puis minimiser cette dernière par
+rapport à $(a_1,...,a_{n-1})$, ce qui nous donnerait $a_1= ...=
+a_{n-1} = \frac{1}{n}$ comme seul candidat. Grâce à la contrainte,
+on obtiendrait également $a_n = \frac{1}{n}$!
+
+
+\exo On considère le modèle d'échantillonnage $X_1 ...,X_n$
+de taille $n$ associé à la famille de lois exponentielles $P =
+\{\Ec(\lambda), \lambda>0\}$. On veut estimer $\lambda$
+
+\ni {\bf 2.1. A partir de la méthode des moments, construire un
+estimateur convergent $\hat \lambda_n$ de $\lambda$}.
+
+\vspace{2mm}
+
+\ni La loi forte des grands nombres implique que $(\bar X_n,
+n=1)$, où $\bar X_n = \frac{1}{n} \sum^n_{i =1} X_i$, converge
+p.s. vers $\E[X_1] = \frac{1}{\lambda}$. Par continuité de la
+fonction: $x \rightarrow \frac{1}{x}$ sur $]0, \infty[$, on en
+déduit que $\hat \lambda_n = 1 / \bar X_n$ est un estimateur
+convergent de $\lambda$.
+
+\vspace{3mm}
+
+\ni {\bf 2.2. Vérifier qu'il s'agit de l'estimateur du maximum
+de vraisemblance.}
+
+\vspace{2mm}
+
+
+\ni La log-vraisemblance est donnée par $$ l_n (x; \lambda )=
+\log L_n (x; \lambda ) = \sum_{i =1}^n \log \left( \lambda
+e^{-\lambda x_i} 1_{x_i > 0 } \right) = n \log \lambda - \lambda
+\sum_{i=1}^n x_i + \log \Pi_{i=1}^n 1_{x_i > 0}.$$
+
+\ni Pour calculer l'EMV (estimateur du maximum de vraisemblance),
+on cherche les zéros de la dérivée de la log-vraisemblance
+$L_n$ :
+
+$$ \Dlam L_n(x,\lambda ) = \frac{n}{\lambda}  - \sum_{i =1}^n x_i = 0 \Leftrightarrow \lambda
+= \frac{n}{\sum_{i =1}^n x_i}.$$
+
+\ni Comme $\Lim_{\lambda \rightarrow 0} L_n (x, \lambda) =
+\Lim_{\lambda \rightarrow \infty} L_n (x, \lambda ) = - \infty$,
+on en déduit que la log-vraisemblance est maximale pour $\lambda
+= \frac{n}{\sum_{i =1}^n x_i}$. L'estimateur du maximum de
+vraisemblance est donc $\hat \lambda_n$.
+
+\vspace{3mm}
+
+\ni {\bf 2.3. Déterminer la loi de $\sum_{i=1}^n  X_i$ .
+Calculer $E_{\lambda}[\hat \lambda_n]$. L'estimateur est-il sans
+biais?}
+
+\vspace{2mm}
+
+\ni En utilisant les fonctions caractéristiques, on vérifie
+que la loi de $\sum_{i=1}^n  X_i$ est la loi $\Gamma_n(\lambda)$
+sous $P_{\lambda}$. On obtient pour $n \geq 2$
+
+\begin{eqnarray*} E_{\lambda} \left[ \frac{1}{\sum_{i=1}^n  X_i} \right]
+&=& \int_0^{\infty} \frac{1}{s} \frac{\lambda^n}{(n-1)!} s^{n-1} e^{-\lambda s} ds \\
+&=& \frac{\lambda}{(n-1)} \int_0^{\infty} \frac{\lambda^{n-1}}{(n-2)!} s^{n-2} e^{-\lambda s} ds \\
+&=& \frac{\lambda}{(n-1)} \enqs où on a identifié la densité
+de $\Gamma(n-1, \lambda)$ dans l'intégrale. Donc on a
+$E_{\lambda}[\hat \lambda_n] = \frac{n}{(n-1)} \lambda$.
+L'estimateur $\hat \lambda_n$ est donc biaisé pour $n \geq 2$
+(Pour $n = 1$, on vérifie que $E_{\lambda}[\hat \lambda_1] =
+\infty$.)
+
+\vspace{3mm}
+
+\ni {\bf 2.4. Déterminer un estimateur $\hat \lambda_n^*$ sans
+biais et un estimateur $\hat \lambda_n^o$ qui minimise le risque
+quadratique parmi les estimateurs $ \hat \lambda_n^{(c)} =
+\frac{c}{\Sum_{i=1}^n  X_i}, \: \hbox{où}\: c  > 0$}
+
+\vspace{2mm}
+
+\ni Les calculs précédents nécessitent de supposer $n \geq
+2$ et donnent comme estimateur sans biais $$\hat \lambda_n^*
+=\frac{n-1}{n} \hat \lambda_n = \frac{n-1}{\Sum_{i =1}^n X_i}.$$
+
+
+\ni On calcule le deuxième moment de la même manière que le
+premier, pour $n \geq 3$
+
+\begin{eqnarray*} E_{\lambda} \left[ \frac{1}{(\sum_{i=1}^n  X_i)^2} \right]
+&=& \frac{\lambda^2}{(n-1)(n-2)} \int_0^{\infty} \frac{\lambda^{n-2}}{(n-3)!} s^{n-3} e^{-\lambda s} ds \\
+&=& \frac{\lambda^2}{(n-1)(n-2)}. \enqs Donc pour tout $c > 0$, on
+a
+
+\beqs R(\hat \lambda^{(c)}_n, \lambda) &=&  E_{\lambda} \left[
+\left( \frac{c}{(\sum_{i=1}^n  X_i)} - \lambda \right)^2\right] \\
+&=& \frac{\lambda^2}{(n-1)(n-2)} \left [c^2 - 2(n - 2)c + (n -
+1)(n - 2) \right). \enqs Le risque quadratique est minimal pour
+$2c - 2(n - 2) = 0$ soit $c = n - 2$. Parmi les estimateurs $\hat
+\lambda^{(c)}$, c'est donc $\hat \lambda^{(o)}= \hat
+\lambda^{(n-2)}$ qui minimise le risque quadratique. Pour $n \leq
+2$ le risque quadratique est infini.
+
+\vspace{3mm}
+
+\exo Soit $(X_1,...,X_n)$ un \'chantillon i.i.d. de loi uniforme
+sur $]\theta, 2 \theta[$ où $\theta > 0$.
+
+\ni {\bf 3.1. Estimer $\theta$ par la méthode des moments}
+
+\vspace{2mm}
+
+\ni $X$ de loi uniforme sur $]\theta, 2 \theta[$, donc admet comme
+densité la fonction: $x \mapsto \frac{1}{\theta} 1_{]\theta, 2
+\theta[}(x)$. Sa moyenne vaut
+
+\beqs E\left[X \right] \; =\; \frac{1}{\theta}
+\int_{\theta}^{2\theta} x dx \; = \; \frac{1}{2\theta} [4
+\theta^2-\theta^2] = \frac{3}{2} \theta \enqs En résolvant
+$\frac{3}{2} \theta = E\left[X \right]$, on obtient l'estimateur
+donné par la méthode des moments, soit
+$$\hat \theta_n = \frac{2}{3} \bar X_n, \:\hbox{avec} \: \bar X_n = \frac1n\Sum_{i=1}^n X_i $$
+
+\ni {\bf 3.2. Déterminer l'estimateur du maxi de vraisemblance
+$\phi$ de $\theta$ et calculer la constante $k$ telle que
+$E_{\theta} [k \phi] = \theta$}
+
+\vspace{2mm}
+
+\ni Une vraisemblance $L_n$ s'écrit $\forall x = (x_1,..., x_n)
+\in \R^n, \forall \theta > 0$, \beqs L_n(x,\theta) &=& \PI_{i=1}^n
+\frac{1}{\theta} 1_{]\theta, 2 \theta[}(x_i) \\
+&=& \frac{1}{\theta^n} 1_{]\theta, \infty[}(x_{(1)}) 1_{]0,
+2\theta[}(x_{(n)}) \\
+&=& \frac{1}{\theta^n} 1_{]\frac{1}{2}x_{(n)},x_{(1)}[} (\theta).
+\enqs où $x_{(1)}$ et $x_{(n)}$ sont respectivement le min et le
+max de l'ensemble $\{x_1,..., x_n\}$.
+
+\ni Comme $\theta \mapsto \frac{1}{\theta^n}$ est une fonction
+décroissante sur $\R_+^*$, la vraisemblance est maximisée au
+point $\theta = \frac{1}{2} x_{(n)}$. Ainsi, l'estimateur du
+maximum de vraisemblance est $\phi = \frac{1}{2} X_{(n)}$, avec
+$X_{(n)} = \Max \{X_1,...,X_n \}$.
+
+\ni Or, la statistique $X_{(n)}$ admet comme densité (exercice de proba classique pour retrouver la
+loi densité de $X_{(n)} = \Max_{i=1}^n X_i$), \beqs y \mapsto
+\frac{n}{\theta^n} (y - \theta)^{n-1} 1_{[\theta, 2
+\theta[}(y).\enqs Donc, son espérance vaut
+$$ E_{\theta} [X_{(n)}] = \int_{\theta}^{2\theta} y
+\frac{n}{\theta^n} (y - \theta)^{n-1} dy $$ ce qui après
+intégration par parties donne \beqs E_{\theta} [X_{(n)}] &=&
+\frac{n}{\theta^n} \left \{ \left[y \frac{(y-\theta)^n}{n}
+\right]^{2\theta}_{\theta} - \int_{\theta}^{2\theta} \frac{(y -
+\theta)^n}{n} d \theta \right\}\\
+&=& 2 \theta - \frac{1}{\theta^n} \left[
+\frac{(y-\theta)^{n+1}}{n+1} \right]_{\theta}^{2\theta} \\
+&=& 2 \theta - \frac{\theta}{n+1}\\
+&=& \frac{2n+1}{n+1} \theta. \enqs
+
+\ni Par conséquence, $E_{\theta} [\phi] = \frac{1}{2}\frac{2n+1}{n+1}
+\theta$ et $k =  \frac{2n+2}{2n+1}$ donne $E_{\theta} [k \phi] =
+\theta$.
+
+\vspace{3mm}
+
+%\exo {\bf Soit $(P_\theta)_ {\theta > 0}$ la famille de lois
+%exponentielles sur $\R^*_+$ de moyenne $\frac{1}{\theta}$. Montrez
+%qu'il n'existe pas d'estimateurs sans biais de $\theta$.} (Ici,
+%vous pouvez oublier cet exercice car nous n'avons pas vu la notion
+%de famille complète.)
+%
+%\vspace{2mm}
+%
+%\ni Cette famille admet comme vraisemblance $$(x,\theta) \in
+%\R^*_+ \times \R^*_+ \mapsto L(x,\theta) = \theta e^{-\theta x}$$
+%Supposons que $\phi$ soit un estimateur sans biais de $\theta$.
+%Alors
+%$$ \forall \theta >0 \: \int_0^{\infty} \phi(x) \theta e^{-\theta
+%x} dx = \theta$$ autrement dit $$ \forall \theta >0 \:
+%\int_0^{\infty} \phi(x) e^{-\theta x} dx = 1$$ Comme
+%$(P_{\theta})_{\theta > 0}$ constitue une famille exponentielle,
+%on peut dériver par rapport à $\theta$ le membre de gauche de
+%cette égalité sous le signe intégrale. Il vient alors
+%$$ \forall \theta >0 \: \int_0^{\infty} - x \phi(x) e^{-\theta
+%x} dx = 0$$ ou encore, en multipliant par $-\theta$
+%$$ \forall \theta >0 \: \int_0^{\infty} x \phi(x) L(x,\theta) dx = 0$$
+%De nouveau, par appartenance à la famille exponentielle, on a une
+%famille complète. Donc, cette dernière égalité assure que $x
+%\phi(x) =0$ pour presque tout $x >0$ et donc que $\phi =0$ presque
+%partout. En définitive $\phi$ ne peut être sans biais.
+
+
+\exo {\bf Pour un échantillon i.i.d. $(X_1,...,X_n)$ d'une loi
+de Bernoulli de paramètre inconnu $\theta \in [0,1]$, montrez
+que la moyenne empirique $\bar X_n: (x_1,..., x_n) \rightarrow
+\frac{1}{n} \Sum_{i=1}^n x_i$ est le seul estimateur sans biais de
+$\theta$ fonction de la somme $ \Sigma_n: (x_1,..., x_n)
+\rightarrow \Sum_{i=1}^n x_i$}
+
+\ni On sait déjà que $\bar X_n$ est un estimateur sans biais pour
+estimer $\theta$ ($E\left[ \bar X_n \right] = \theta$). En
+effet,d'après cours de Proba, $\Sigma_n = \Sum_{i=1}^n x_i$ suit
+la loi binomiale $\Bc(n,\theta)$. Ainsi, $E \left[ \Sigma_n
+\right] = n \theta$, d'où \beq  E\left[ \bar X_n \right] &=&
+\frac{1}{n} E \left[ \Sigma_n \right] \nonumber \\
+&=& \Sum_{x=0}^n \frac{x}{n} {\LARGE{C}}_n^x \theta^x (1-
+\theta)^{n-x} = \theta \label{rel1} \: \hbox{(on calcule ici
+l'espérance d'une loi binomiale.)} \enq
+
+\ni Montrons maintenant que $\bar X_n$ le seul estimateur sans
+biais de $\theta$, fonction de $\Sigma_n$.
+
+\ni Supposons maintenant qu'il existe une fonction $\psi$ de
+$\{0,...,n \}$ dans $\R$, telle que $\psi(\Sigma_n)$ est un
+estimateur sans biais de $\theta$, c'est-à-dire: \beq \label{rel2}
+E\left[ \psi(\Sigma_n \right] = \Sum_{x=0}^n \psi(x)
+{\LARGE{C}}_n^x \theta^x (1- \theta)^{n-x} = \theta \enq En
+utilisant \reff{rel1} et \reff{rel2}, on obtient $\forall \theta
+\in \left[0,1 \right[$: \beq \label{rel3} \Sum_{x=0}^n
+\left(\psi(x) - \frac{x}{n}\right) {\LARGE{C}}_n^x
+\left(\frac{\theta}{1-\theta} \right)^x = 0 \enq Lorsque $\theta$
+décrit $[0,1[$, le rapport $\frac{\theta}{1-\theta}$ varie dans
+tout $\R^+$. Ainsi l'égalité \reff{rel3} exprime que le polynôme
+de degré $n$ de coefficients $\left(\psi(x) - \frac{x}{n}\right)
+{\LARGE{C}}_n^x$ est identiquement nul. Ceci signifie que ses
+coefficients sont nuls et donc que:
+$$\forall x \in \{0,1,...,n\} \: \psi(x) = \frac{x}{n},$$
+soit finalement que $\psi(\Sigma_n) = \frac{\Sigma_n}{n} = \bar
+X_n$.
+
+
+\end{document}

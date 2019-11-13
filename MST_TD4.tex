@@ -1,0 +1,217 @@
+% DST n1
+% DST n1
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}\usepackage{amsmath,amssymb}
+\usepackage{dsfont}
+\usepackage[utf8]{inputenc} % entree 8 bits iso-latin1
+\usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisees
+\usepackage[french]{babel}%typo française
+\usepackage{times}
+\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Q}{\mathbb{Q}}
+
+
+\def \I{\mathbb{I}}
+\def \N{\mathbb{N}}
+\def \R{\mathbb{R}}
+\def \M{\mathbb{M}}
+\def \Z{\mathbb{Z}}
+\def \E{\mathbb{E}}
+\def \F{\mathbb{F}}
+\def \P{\mathbb{P}}
+\def \Q{\mathbb{Q}}
+\def \D{\mathbb{D}}
+
+
+\def \Ac{{\cal A}}
+\def \Bc{{\cal B}}
+\def \Cc{{\cal C}}
+\def \Dc{{\cal D}}
+\def \Ec{{\cal E}}
+\def \Fc{{\cal F}}
+\def \Gc{{\cal G}}
+\def \Hc{{\cal H}}
+\def \Ic{{\cal I}}
+\def \Kc{{\cal K}}
+\def \Lc{{\cal L}}
+\def \Pc{{\cal P}}
+\def \Qc{{\cal Q}}
+\def \Mc{{\cal M}}
+\def \Nc{{\cal N}}
+\def \Oc{{\cal O}}
+\def \Sc{{\cal S}}
+\def \Tc{{\cal T}}
+\def \Uc{{\cal U}}
+\def \Vc{{\cal V}}
+\def \Wc{{\cal W}}
+\def \Yc{{\cal Y}}
+\def \Zc{{\cal Z}}
+\def \Xc{{\cal X}}
+
+
+
+
+
+
+\def \PI{\displaystyle\Pi}
+
+\def \Sum{\displaystyle\sum}
+\def \Prod{\displaystyle\prod}
+\def \Int{\displaystyle\int}
+\def \Frac{\displaystyle\frac}
+\def \Inf{\displaystyle\inf}
+\def \Sup{\displaystyle\sup}
+\def \Lim{\displaystyle\lim}
+\def \Liminf{\displaystyle\liminf}
+\def \Limsup{\displaystyle\limsup}
+\def \Max{\displaystyle\max}
+\def \Min{\displaystyle\min}
+
+
+
+
+\def \ni{\noindent}
+
+\def \eps{\varepsilon}
+
+
+\def \ep{\hbox{ }\hfill$\Box$}
+
+
+\def\Dt#1{\Frac{\partial #1}{\partial t}}
+\def\Dx#1{\Frac{\partial #1}{\partial x}}
+\def\Ds#1{\Frac{\partial #1}{\partial s}}
+\def\Dss#1{\Frac{\partial^2 #1}{\partial s^2}}
+\def\Dy#1{\Frac{\partial #1}{\partial y}}
+\def\Dyy#1{\Frac{\partial^2 #1}{\partial y^2}}
+\def\Dsy#1{\Frac{\partial^2 #1}{\partial s \partial y}}
+\def\Dk#1{\Frac{\partial #1}{\partial k}}
+\def\Dp#1{\Frac{\partial #1}{\partial p}}
+\def\Dkk#1{\Frac{\partial^2 #1}{\partial k^2}}
+\def\Dpp#1{\Frac{\partial^2 #1}{\partial p^2}}
+\def\Dky#1{\Frac{\partial^2 #1}{\partial k \partial y}}
+\def\Dkp#1{\Frac{\partial^2 #1}{\partial k \partial p}}
+\def\Dyp#1{\Frac{\partial^2 #1}{\partial y \partial p}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dthi#1{\Frac{\partial #1}{\partial \theta_i}}
+\def\Dthj#1{\Frac{\partial #1}{\partial \theta_j}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+\def\Dthij#1{\Frac{\partial^2 #1}{\partial \theta_i \partial \theta_j}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+
+\def\Dlam#1{\Frac{\partial #1}{\partial \lambda}}
+
+\def\reff#1{{\rm(\ref{#1})}}
+
+\def\beqs{\begin{eqnarray*}}
+\def\enqs{\end{eqnarray*}}
+\def\beq{\begin{eqnarray}}
+\def\enq{\end{eqnarray}}
+
+
+
+
+
+
+%%%%%\setbeamercovered{dynamic}
+
+
+
+
+
+
+\newcounter{exo}
+\def\cit{\addtocounter{exo}{-1}\refstepcounter{exo}\label}
+\def\exo{\mbox{}\\[0em]\hspace*{0em}\bf Exercice
+\addtocounter{exo}{1}\arabic{exo}.\rm\hspace{1ex}}
+
+
+
+
+\begin{document}
+\centerline{\sc \MSA}  \centerline{~}
+\vskip1cm \centerline{{\bf TD 4}} \centerline{2018}
+
+\exo Soit $X$ une variable al\'eatoire \`a valeurs dans $\N^*$
+d\'efinie comme l'instant de premier succ\`es dans un sch\'ema de
+Bernoulli de param\`etre $q \in ]0, 1[$.
+
+\vspace{3mm}
+
+1. V\'erifier que la loi de $X$ est une loi g\'eom\'etrique dont
+on pr\'ecisera le param\`etre.
+
+\vspace{3mm}
+
+2. V\'erifier qu'il s'agit d'un mod\`ele exponentiel. Donner une
+statistique exhaustive.
+
+\vspace{3mm}
+
+3. D\'eterminer I(q), l'information de Fisher sur $q$ d'un
+\'echantillon de taille 1.
+
+\vspace{3mm}
+
+Soit $X_1,...,X_n$ un \'echantillon ind\'ependant de taille $n$ de
+m\^eme loi que $X$.
+
+\vspace{3mm}
+
+4. D\'eterminer $\hat q_n$, l'estimateur du maximum de
+vraisemblance de $q$.
+
+\vspace{3mm}
+
+5. Montrer que l'estimateur du maximum de vraisemblance est
+asymptotiquement normal.
+
+\vspace{3mm}
+
+\exo On consid\`ere le mod\`ele d'\'echantillonnage $X_1 ...,X_n$
+de taille $n$ associ\'e \`a la famille de lois exponentielles $P =
+\{\Ec(\lambda), \lambda>0\}$. On veut estimer $\lambda$
+
+\vspace{3mm}
+
+1. A partir de la m\'ethode des moments, construire un estimateur
+convergent $\hat \lambda_n$ de $\lambda$.
+
+\vspace{3mm}
+
+2. V\'erifier qu'il s'agit de l'estimateur du maximum de
+vraisemblance.
+
+\vspace{3mm}
+
+3. D\'eterminer la loi de $\Sigma_{i=1}^n  X_i$ . Calculer
+$E_{\lambda}[\hat \lambda_n]$. L'estimateur est-il sans biais?
+
+\vspace{3mm}
+
+4. D\'eterminer un estimateur $\hat \lambda_n^*$ sans biais et un
+estimateur $\hat \lambda_n^o$ qui minimise le risque quadratique
+parmi les estimateurs $$ \hat \lambda_n^{(c)} =
+\frac{c}{\Sigma_{i=1}^n  X_i}, \: \hbox{où} \: c> 0$$
+
+
+5. Calculer  l'information de Fisher et la borne Cramer-Rao pour un ESB de $\lambda$.
+
+6. Les estimateurs \'etudi\'es font intervenir la statistique $S_n
+= \sum_{i=1}^n X_i$. Est-elle exhaustive?
+
+
+7. R\'esum\'e : quelles propri\'et\'es $\hat \lambda_n^*$ a-t-il
+parmi les suivantes ?
+
+(a) Sans biais. (b) Efficace. (c) Asymptotiquement normal.
+
+
+
+
+
+\end{document}

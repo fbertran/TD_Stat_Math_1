@@ -1,0 +1,387 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}\usepackage{amsmath,amssymb}
+\usepackage{dsfont}
+\usepackage[latin1]{inputenc} % entree 8 bits iso-latin1
+\usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisees
+\usepackage[french]{babel}%typo française
+\usepackage{times}
+\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Q}{\mathbb{Q}}
+\usepackage{color}
+
+\def \I{\mathbb{I}}
+\def \N{\mathbb{N}}
+\def \R{\mathbb{R}}
+\def \M{\mathbb{M}}
+\def \Z{\mathbb{Z}}
+\def \E{\mathbb{E}}
+\def \F{\mathbb{F}}
+\def \P{\mathbb{P}}
+\def \Q{\mathbb{Q}}
+\def \D{\mathbb{D}}
+
+
+\def \Ac{{\cal A}}
+\def \Bc{{\cal B}}
+\def \Cc{{\cal C}}
+\def \Dc{{\cal D}}
+\def \Ec{{\cal E}}
+\def \Fc{{\cal F}}
+\def \Gc{{\cal G}}
+\def \Hc{{\cal H}}
+\def \Ic{{\cal I}}
+\def \Kc{{\cal K}}
+\def \Lc{{\cal L}}
+\def \Pc{{\cal P}}
+\def \Rc{{\cal R}}
+\def \Qc{{\cal Q}}
+\def \Mc{{\cal M}}
+\def \Nc{{\cal N}}
+\def \Oc{{\cal O}}
+\def \Sc{{\cal S}}
+\def \Tc{{\cal T}}
+\def \Uc{{\cal U}}
+\def \Vc{{\cal V}}
+\def \Wc{{\cal W}}
+\def \Yc{{\cal Y}}
+\def \Zc{{\cal Z}}
+\def \Xc{{\cal X}}
+
+
+
+
+
+
+\def \PI{\displaystyle\Pi}
+
+\def \Sum{\displaystyle\sum}
+\def \Prod{\displaystyle\prod}
+\def \Int{\displaystyle\int}
+\def \Frac{\displaystyle\frac}
+\def \Inf{\displaystyle\inf}
+\def \Sup{\displaystyle\sup}
+\def \Lim{\displaystyle\lim}
+\def \Liminf{\displaystyle\liminf}
+\def \Limsup{\displaystyle\limsup}
+\def \Max{\displaystyle\max}
+\def \Min{\displaystyle\min}
+
+
+
+
+\def \ni{\noindent}
+
+\def \eps{\varepsilon}
+
+
+\def \ep{\hbox{ }\hfill$\Box$}
+
+
+\def\Dt#1{\Frac{\partial #1}{\partial t}}
+\def\Dx#1{\Frac{\partial #1}{\partial x}}
+\def\Ds#1{\Frac{\partial #1}{\partial s}}
+\def\Dss#1{\Frac{\partial^2 #1}{\partial s^2}}
+\def\Dy#1{\Frac{\partial #1}{\partial y}}
+\def\Dyy#1{\Frac{\partial^2 #1}{\partial y^2}}
+\def\Dsy#1{\Frac{\partial^2 #1}{\partial s \partial y}}
+\def\Dk#1{\Frac{\partial #1}{\partial k}}
+\def\Dp#1{\Frac{\partial #1}{\partial p}}
+\def\Dkk#1{\Frac{\partial^2 #1}{\partial k^2}}
+\def\Dpp#1{\Frac{\partial^2 #1}{\partial p^2}}
+\def\Dky#1{\Frac{\partial^2 #1}{\partial k \partial y}}
+\def\Dkp#1{\Frac{\partial^2 #1}{\partial k \partial p}}
+\def\Dyp#1{\Frac{\partial^2 #1}{\partial y \partial p}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dthi#1{\Frac{\partial #1}{\partial \theta_i}}
+\def\Dthj#1{\Frac{\partial #1}{\partial \theta_j}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+\def\Dthij#1{\Frac{\partial^2 #1}{\partial \theta_i \partial \theta_j}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+
+\def\Dlam#1{\Frac{\partial #1}{\partial \lambda}}
+
+\def\reff#1{{\rm(\ref{#1})}}
+
+\def\beqs{\begin{eqnarray*}}
+\def\enqs{\end{eqnarray*}}
+\def\beq{\begin{eqnarray}}
+\def\enq{\end{eqnarray}}
+
+
+\usepackage[french]{babel}%typo française
+
+\usepackage{times}
+
+
+
+
+%%%%%\setbeamercovered{dynamic}
+
+
+
+
+
+
+\newcounter{exo}
+\def\cit{\addtocounter{exo}{-1}\refstepcounter{exo}\label}
+\def\exo{\mbox{}\\[0em]\hspace*{0em}\bf Exercice
+\addtocounter{exo}{1}\arabic{exo}.\rm\hspace{1ex}}
+
+\parindent 0pt
+
+%
+
+\begin{document}
+\centerline{\sc \'Etude de Cas}  \centerline{~}
+\vskip1cm \centerline{{\bf Corrigé du TD 7}} \centerline{Mars
+2011}
+
+\exo On souhaite vérifier la qualité du générateur de nombres
+aléatoires d'une calculatrice scientifique. Pour cela, on procède
+à $250$ tirages dans l'ensemble $\{0,\ldots,9\}$ et on obtient les
+résultats suivants :
+
+\beqs\begin{array}{ccccccccccc}
+x & 0 &1&2&3&4&5&6&7&8&9 \\
+N(x) & 28&32&23 &26 &23 &31 &18 &19 &19 &31
+\end{array}
+\enqs {\bf A l'aide du test du $\chi^2$, vérifier si le générateur
+produit des entiers indépendants et uniformément répartis sur
+$\{0,\ldots,9\}$.}
+
+\vspace{2mm}
+
+\ni On applique le cours. On doit ici faire un test du $\chi^2$
+pour vérifier si l'échantillon $X_1,\ldots,X_n$ suit la loi uniforme
+sur $\{0,\ldots,9\}$. Il y a quatre étapes à suivre:
+
+\vspace{2mm}
+
+\ni 1. On calcule la statistique de test qui mesure la distance
+entre la loi réalisée et la loi théorique.
+
+\beqs D_n = n  \Sum_{i=0}^9 \frac{(\hat p_i - p_i)^2}{p_i} \enqs
+où $\hat p_i$ représentent les fréquences empiriques observées et
+$p_i = \frac{1}{10}$ les fréquences théoriques.
+
+\vspace{2mm}
+
+\ni 2. D'après cours, la statistique de test $D_n$ convergent en
+loi vers un $\chi^2$ de degrés de liberté $10-1= 9$. On peut
+assimiler $D_n$ à v.a. suivant une loi du $\chi^2$ si $n p_i >5,
+\; \forall i$ $(n p_i = 25 > 5)$ et si $n\geqslant 50$.
+
+\vspace{2mm}
+
+\ni 3. Pour un niveau $\alpha$, la région de rejet est:
+$$ W = \{D_n > F^{-1}_{\chi^2_9}(1-\alpha) \}$$où
+$F^{-1}_{\chi^2_9}$ est l'inverse de la fonction de répartition de
+la loi du $\chi^2_9$.
+
+\vspace{2mm}
+
+\ni Applications Numériques:
+
+\beqs\begin{array}{ccccccccccc}
+x & 0 &1&2&3&4&5&6&7&8&9 \\
+N(x) & 28&32&23 &26 &23 &31 &18 &19 &19 &31\\
+\hat p_i & \frac{28}{250} & \frac{32}{250}& \frac{23}{250}&
+\frac{26}{250}& \frac{23}{250}& \frac{31}{250}& \frac{18}{250}&
+\frac{19}{250}& \frac{19}{250}& \frac{31}{250} \\
+p_i & 0,1 & 0,1& 0,1& 0,1& 0,1& 0,1& 0,1& 0,1& 0,1& 0,1 \\
+n \frac{(\hat p_i - p_i)^2}{p_i} 0,36&1,96&0,16&0,04&0,16&1,44&1,96&1,44&1,44&1,44
+\end{array}
+\enqs La somme de la dernière ligne donne $D_{250} = 10,4$
+
+
+
+
+D'après le tableau des fractiles de la loi du $\chi^2$,
+$F^{-1}_{\chi^2_9}(1-\alpha) = 16,92$. Comme $D_{250} <
+F^{-1}_{\chi^2_9}(1-\alpha)$, on accepte l'hypothèse $H_0$.
+
+\vspace{2mm}
+
+\exo Pour déterminer si les merles vivent en communauté ou en
+solitaire, on procède à l'expérience suivante: on dispose un filet
+dans la zone d'habitat des merles, et on vient relever le nombre
+de captures pendant 89 jours. On obtient les résultats suivants:
+
+\beqs\begin{array}{cccccccc}
+\hbox{Nombre de captures} & 0 &1&2&3&4&5&6 \\
+\hbox{Nombre de jours} &56&22&9&1&0&1&0
+\end{array}
+\enqs
+
+\ni {\bf 1.} On suppose qu'une loi de Poisson est représentative
+de l'expérience. Construire un estimateur du paramètre de cette
+loi.
+
+\vspace{2mm}
+
+La vraisemblance du modèle de Poisson est: \beqs L(x,\lambda) &=&
+e^{- n\lambda} \frac{\lambda^{\sum_{i=1}^n
+x_i}}{\Pi_{i=1}^n x_i!}\\
+\ln L(x,\lambda) &=& -n\lambda +  \ln (\lambda )\sum_{i=1}^n x_i +
+\ln(\Pi_{i=1}^n x_i!)\\
+\frac{\partial \ln L(x,\lambda)}{\partial \lambda} &=& - n +
+\frac{\sum_{i=1}^n x_i}{\lambda}
+ \enqs
+qui s'annule quand $\lambda = \frac{1}{n} \Sum_{i=1}^n x_i$. On
+vérifie que la dérivée seconde est négative en cette valeur.
+
+On obtient l'EMV: $\hat \lambda_n = \frac{1}{n} \Sum_{i=1}^n X_i$
+
+
+\ni {\bf 2.} Vérifier à l'aide d'un test du $\chi^2$ l'adéquation
+du modèle aux données. Faire l'application numérique au niveau
+$\alpha = 5\%$.
+
+\vspace{2mm}
+
+ On calcule la statistique de test:
+
+\beqs D_n = n  \Sum_{i=0}^6 \frac{(\hat p_i - p_i(\hat
+\lambda_n))^2}{p_i} \enqs où $\hat p_i$ représentent les
+fréquences empiriques observées et $p_i(\hat \lambda_n) = e^{-
+\hat \lambda_n} \frac{\hat \lambda_n^j}{j!}$ les fréquences
+théoriques. $D_n$ convergent en loi vers un $\chi^2_{7-1-1}$. Le
+test est défini par la région critique:
+
+$$ W = \{D_n > F^{-1}_{\chi^2_5}(1-\alpha) \}$$où
+$F^{-1}_{\chi^2_5}$ est l'inverse de la fonction de répartition de
+la loi du $\chi^2_5$.
+
+A.N. On obtient $\hat \lambda_n = 0,539$ et $D_n = 50,9$ et
+$F^{-1}_{\chi^2_5}(0,95) = 11,07 < D_n$. Donc, on rejette $H_0$.
+
+\vspace{2mm}
+
+\ni {\bf Remarque}: Cette conclusion est erronnée car la condition
+requise $n p_i >5$ pour assimiler la loi de $D_n$ à un $\chi^2$
+n'est pas remplie. Cela est du au choix inadéquate de classes.
+
+\vspace{2mm}
+
+\ni {\bf 3. Reprendre l'exercice en groupant les catégories Nombre
+de captures $= 2, 3, 4, 5$ et $6$ en Nombre de captures $\geq 2$.}
+
+On refait le travail avec cette fois $3$ classes.
+
+\beqs\begin{array}{cccc}
+\hbox{Nombre de captures} & 0 &1& \geq 2\\
+\hbox{Nombre de jours} &56&22&11
+\end{array}
+\enqs
+
+La statistique de test: \beqs D_n = n \Sum_{i=0}^2 \frac{(\hat p_i
+- p_i(\hat \lambda_n))^2}{p_i} \enqs On vérifie que $n p_i > 5$.
+$D_n$ suit la loi du $\chi^2$ (à un degré de liberté). La région
+de rejet devient:
+$$ W = \{D_n > F^{-1}_{\chi^2}(1-\alpha) \}$$
+
+A.N. $D_n = 2,00 < F^{-1}_{\chi^2}(0,95) = 3,84$. On accepte donc
+$H_0$.
+
+\vspace{2mm}
+
+%\exo (Vecteur gaussien) Soit $X = (X_1,X_2,X_3,X_4)$ un vecteur
+%gaussien centré de matrice de covariance
+%
+%
+%\beqs \left(\begin{array}{cccc}
+%2& 1 & 0 &1\\
+%1& 1 & 0& 1\\
+%0& 0 & 1& 0\\
+%1& 1 & 0& 2 \end{array} \right) \enqs
+%
+%\ni {\bf 1. Que peut-on dire de $X_3$ et de $(X_1,X_2,X_4)$?}
+%
+%\vspace{2mm}
+%
+%On voit que quelque soit $i = 1, 2, 4$, on a $Cov(X_3X_i) = 0$,
+%donc $X_3$ est indépendant du vecteur gaussien $(X_1,X_2,X_4)$.
+%
+%\vspace{2mm}
+%
+%\ni {\bf 2. Donner la loi marginale de $(X_1,X_2)$ et calculer
+%$E[X_1|X_2]$.}
+%
+%\vspace{2mm}
+%
+%La loi d'un vecteur gaussien (comme une v.a. gaussienne
+%unidimensionnelle) est entièrement déterminée par son espérance et
+%sa matrice de covariance.
+%
+%\vspace{1mm}
+%
+%- $E[(X_1,X_2)] = (0,0)$ car il s'agit d'un vecteur gaussien
+%centré.
+%
+%\vspace{1mm}
+%
+%- La matrice de covariance $\Gamma_{12} = \left(\begin{array}{cc}
+%2& 1 \\
+%1& 1 \end{array} \right) $
+%
+%\vspace{1mm}
+%
+%- Pour le calcul de l'espérance conditionnelle, on cherche à
+%écrire $X_1 = aX_2 + W$ où $W$ est une variable aléatoire
+%indépendante de $X_2$. Comme $X_1$ et $X_2$ sont centrées, $W$
+%l'est aussi. On calcule alors $Cov(X_1,X_2) = E[X_1X_2] = a
+%E[X_2^2 ] + E[X_2]E[W] = a$, car $W$ est indépendante de $X_2$. On
+%en déduit que $a = 1$ et que $W = X_1 - X_2$. Il vient ensuite
+%$E[X_1|X_2] = E[W] + X_2 = X_2$.
+%
+%\vspace{2mm}
+%
+%\ni {\bf 3. Même question pour $(X_2,X_4)$.}
+%
+%\vspace{1mm}
+%
+%Le vecteur $(X_2,X_4)$ est également gaussien centré, de matrice
+%de covariance $\Gamma_{24} = \left(\begin{array}{cc}
+%1& 1 \\
+%1& 2 \end{array} \right) $. On obtient de même que $E[X_4|X_2] =
+%X_2$.
+%
+%\vspace{2mm}
+%
+%\ni {\bf 4. En déduire deux variables indépendantes de $X_2$,
+%fonctions respectivement de $X_1, X_2$ et de $X_2,X_4$.}
+%
+%\vspace{2mm}
+%
+%Si $(X, Y )$ est un vecteur gaussien alors $(X - E[X|Y ], Y )$ est
+%aussi un vecteur gaussien car $E[X|Y ]$ est une fonction linéaire
+%de $Y$. Or $E [(X - E[X|Y ])Y ] = 0$, donc ces deux variables sont
+%indépendantes. Au vu des questions 2 et 3, on sait que $X_1-X_2$
+%et $X_4-X_2$ sont deux variables gaussiennes indépendantes de
+%$X_2$.
+%
+%\vspace{2mm}
+%
+%\ni {\bf 5. Trouver une décomposition de $X$ en quatre vecteurs
+%indépendants.}
+%
+%\vspace{2mm}
+%
+%
+%On choisit comme décomposition de $X : (X_1 - X_2,X_2,X_3,X_4 -
+%X_2)$. Pour montrer que ces vecteurs sont indépendants, il suffit
+%de montrer que $X-1 - X-2$ et $X_4 - X_2$ sont indépendantes. Or
+%le vecteur $(X_1 - X_2,X_4 - X_2)$ est gaussien donc ces variables
+%sont indépendantes si leur covariance est nulle. Or, on a $E [(X_1
+%- X_2)(X_4 - X_2)] = Cov(X_1,X_4) - Cov(X_2,X_4) - Cov(X_1,X_2) +
+%Cov(X_2,X_2) = 0$.
+%
+%
+%
+%
+
+\end{document}

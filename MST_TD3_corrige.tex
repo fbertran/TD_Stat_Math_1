@@ -1,0 +1,371 @@
+% DST n1
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{a4wide}\usepackage{amsmath,amssymb}
+\usepackage{dsfont}
+\usepackage[latin1]{inputenc} % entree 8 bits iso-latin1
+\usepackage[T1]{fontenc}      % encodage 8 bits des fontes utilisees
+\usepackage[french]{babel}%typo française
+\usepackage{times}
+\newcommand{\R}{\mathbb{R}}\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}\newcommand{\Q}{\mathbb{Q}}
+
+
+\def \I{\mathbb{I}}
+\def \N{\mathbb{N}}
+\def \R{\mathbb{R}}
+\def \M{\mathbb{M}}
+\def \Z{\mathbb{Z}}
+\def \E{\mathbb{E}}
+\def \F{\mathbb{F}}
+\def \P{\mathbb{P}}
+\def \Q{\mathbb{Q}}
+\def \D{\mathbb{D}}
+
+
+\def \Ac{{\cal A}}
+\def \Bc{{\cal B}}
+\def \Cc{{\cal C}}
+\def \Dc{{\cal D}}
+\def \Ec{{\cal E}}
+\def \Fc{{\cal F}}
+\def \Gc{{\cal G}}
+\def \Hc{{\cal H}}
+\def \Ic{{\cal I}}
+\def \Kc{{\cal K}}
+\def \Lc{{\cal L}}
+\def \Pc{{\cal P}}
+\def \Qc{{\cal Q}}
+\def \Mc{{\cal M}}
+\def \Nc{{\cal N}}
+\def \Oc{{\cal O}}
+\def \Sc{{\cal S}}
+\def \Tc{{\cal T}}
+\def \Uc{{\cal U}}
+\def \Vc{{\cal V}}
+\def \Wc{{\cal W}}
+\def \Yc{{\cal Y}}
+\def \Zc{{\cal Z}}
+\def \Xc{{\cal X}}
+
+
+
+
+
+
+\def \PI{\displaystyle\Pi}
+
+\def \Sum{\displaystyle\sum}
+\def \Prod{\displaystyle\prod}
+\def \Int{\displaystyle\int}
+\def \Frac{\displaystyle\frac}
+\def \Inf{\displaystyle\inf}
+\def \Sup{\displaystyle\sup}
+\def \Lim{\displaystyle\lim}
+\def \Liminf{\displaystyle\liminf}
+\def \Limsup{\displaystyle\limsup}
+\def \Max{\displaystyle\max}
+\def \Min{\displaystyle\min}
+
+
+
+
+\def \ni{\noindent}
+
+\def \eps{\varepsilon}
+
+
+\def \ep{\hbox{ }\hfill$\Box$}
+
+
+\def\Dt#1{\Frac{\partial #1}{\partial t}}
+\def\Dx#1{\Frac{\partial #1}{\partial x}}
+\def\Ds#1{\Frac{\partial #1}{\partial s}}
+\def\Dss#1{\Frac{\partial^2 #1}{\partial s^2}}
+\def\Dy#1{\Frac{\partial #1}{\partial y}}
+\def\Dyy#1{\Frac{\partial^2 #1}{\partial y^2}}
+\def\Dsy#1{\Frac{\partial^2 #1}{\partial s \partial y}}
+\def\Dk#1{\Frac{\partial #1}{\partial k}}
+\def\Dp#1{\Frac{\partial #1}{\partial p}}
+\def\Dkk#1{\Frac{\partial^2 #1}{\partial k^2}}
+\def\Dpp#1{\Frac{\partial^2 #1}{\partial p^2}}
+\def\Dky#1{\Frac{\partial^2 #1}{\partial k \partial y}}
+\def\Dkp#1{\Frac{\partial^2 #1}{\partial k \partial p}}
+\def\Dyp#1{\Frac{\partial^2 #1}{\partial y \partial p}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dthi#1{\Frac{\partial #1}{\partial \theta_i}}
+\def\Dthj#1{\Frac{\partial #1}{\partial \theta_j}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+\def\Dthij#1{\Frac{\partial^2 #1}{\partial \theta_i \partial \theta_j}}
+
+\def\Dth#1{\Frac{\partial #1}{\partial \theta}}
+\def\Dtth#1{\Frac{\partial^2 #1}{\partial \theta^2}}
+
+\def\Dlam#1{\Frac{\partial #1}{\partial \lambda}}
+
+\def\reff#1{{\rm(\ref{#1})}}
+
+\def\beqs{\begin{eqnarray*}}
+\def\enqs{\end{eqnarray*}}
+\def\beq{\begin{eqnarray}}
+\def\enq{\end{eqnarray}}
+
+
+
+
+
+
+%%%%%\setbeamercovered{dynamic}
+
+
+
+
+
+
+\newcounter{exo}
+\def\cit{\addtocounter{exo}{-1}\refstepcounter{exo}\label}
+\def\exo{\mbox{}\\[0em]\hspace*{0em}\bf Exercice
+\addtocounter{exo}{1}\arabic{exo}.\rm\hspace{1ex}}
+
+
+
+\begin{document}
+\centerline{\sc \'Etude de Cas}  \centerline{~}
+\vskip1cm \centerline{{\bf Corrigé du TD 3}} \centerline{Février 2011}
+
+
+
+\exo On observe la r\'ealisation d'un \'echantillon $X_1,...,X_n$
+de taille $n$ de loi $P_{\theta}$ de densit\'e $$ f(x, \theta) =
+\frac{1}{\theta} (1 -x )^{\frac{1}{\theta} - 1} {\bf 1}_{]0 1[}
+(x), \:\theta \in \R_+^*.$$
+
+\ni {\bf 1.1. Donner une statistique exhaustive.}
+
+\ni Pour obtenir une statistique exhaustive, une solution consiste
+à appliquer le théorème de Darmois. On doit donc d'abord montrer
+que le modèle $\Pc = \{P_{\theta}, \; \theta > 0 \}$ forme un
+modèle exponentiel, autrement que la fonction densité s'écrit sous
+forme exponentielle.
+
+\beqs \ln f(x, \theta) = \frac{1}{\theta} \ln (1-x) - \ln \theta -
+\ln (1-x) + \ln {\bf 1}_{]0 1[} (x). \enqs Donc le modèle est bien
+de forme exponentielle. De plus, en appliquant le théorème de
+Darmois, on obtient une statistique exhaustive: $S_n =
+\Sum_{i=1}^n \ln (1-X_i)$.
+
+\vspace{2mm}
+
+\ni {\bf 1.2. D\'eterminer l'estimateur du maximum de
+vraisemblance $T_n$ de $\theta$.}
+
+\ni La log-vraisemblance du modèle est donnée par:
+$$ l_n(x_1,...,x_n;\theta) = \ln L_n(x_1,...,x_n;\theta) = - n \ln \theta + (\frac{1}{\theta} - 1) \Sum_{i=1}^n
+\ln(1-x_i) + \Pi_{i=1}^n \ln ({\bf 1}_{]0 1[} (x_i)).$$ La
+log-vraisemblance vaut $-\infty$ sur la frontière (quand $\theta
+\rightarrow 0^+$ et $\theta \rightarrow + \infty$). Donc son
+maximum est atteint au point $\theta$ qui annule sa dérivée,i.e.
+au point $\theta = \frac{1}{n} \Sum_{i=1}^n - \ln (1-x_i)$. On
+obtient ainsi l'EMV:
+$$ T_n = \frac{1}{n} \Sum_{i=1}^n - \ln (1-X_i)$$
+
+\ni {\bf 1.3. Montrer que $-\ln(1 -X_i)$ suit une loi
+exponentielle dont on pr\'ecisera le param\`etre.}
+
+\ni En utilisant la méthode de la fonction muette et le changement
+de variable $y = - \ln(1-x)$, on obtient pour une fonction $h$
+mesurable bornée:
+
+$$E_{\theta}\left[h(-\ln(1-X_i)) \right] = \int_0^1 h(-\ln(1-x))
+\frac{1}{\theta} (1-x)^{\frac{1}{\theta}-1} dx = \int_0^{\infty}
+h(y) \frac{1}{\theta} e^{-\frac{y}{\theta}} dy.$$ On en déduit que
+$- \ln(1-X_i)$ suit une loi exponentielle de paramètre
+$\frac{1}{\theta}$.
+
+\vspace{2mm}
+
+\ni {\bf 1.4. Calculer le biais et le risque quadratique de $T_n$.
+Cet estimateur est-il convergent?}
+
+\ni - Le biais $b_n(T_n, \theta) = E_{\theta}[T_n] - \theta =
+E_{\theta} [1- \ln(1-X_1)] - \theta = 0.$ L'estimateur $T_n$ est
+donc sans biais.
+
+\ni - Le risque quadratique est:
+$$R_n(T_n, \theta) = E_{\theta}\left[(T_n - \theta)^2\right] =
+\hbox{Var}_{\theta}(T_n) = \frac{\theta^2}{n}.$$
+
+\ni - Convergence: Les variables aléatoires $- \ln(1-X_i), i \geq
+1$ sont indépendantes, de même loi et intégrables. La loi forte de
+grands nombres assure que la suite $(T_n, n > 1)$ converge presque
+sûrement vers $\theta$.
+
+
+
+\exo {\bf 2.1.} Soit $(X_1,...,X_n)$ un \'echantillon de $n$
+variables i.i.d. de loi de Poisson de param\`etre $\lambda$:
+$$P(X_1 = k) = e^{-\lambda} \frac{\lambda^k}{k!},\: ; k \in \N^*$$
+Calculer la vraisemblance de l'\'echantillon, d\'eterminer si le
+mod\`ele est exponentiel et exhiber une statistique exhaustive.
+
+\vspace{2mm}
+
+\ni Le paramètre du modèle est $\lambda \in \Theta = \R_+^*$. On a
+pour $x \in \N^n$
+
+\beqs L_n(x) &=& e^{-n\lambda} \frac{\lambda^{\sum_ {i=1}^n
+x_i}}{\Pi_{i=1}^n x_i!} \\
+\log L_n(x) &=& \lambda \sum_ {i=1}^n x_i + b(x) + \beta(\lambda).
+\enqs Par conséquent, le modèle est exponentiel et une statistique
+exhaustive est la statistique canonique $S(X_1,..., X_n) = \sum_
+{i=1}^n X_i$.
+
+\vspace{2mm}
+
+\ni {\bf 2.2. M\^emes questions avec une loi de Pareto} de
+param\`etres $\alpha$ et $\theta$ avec $\alpha > 1$, $\theta > 0$
+de densit\'e
+$$f(x) = \frac{\alpha -1}{\theta} (\frac{\theta}{x})^{\alpha} {\bf 1}_{[\theta,
+\infty[}(x).$$
+
+\ni Le paramètre du modèle est $(\alpha, \theta) \in \Theta =
+\R^2$, on a
+
+$$L_n(x) = \left(  \frac{\alpha -1}{\theta} \right) \theta^{n
+\alpha}e^{-\alpha \sum_ {i=1}^n x_i } {\bf 1}_{[\theta,
+\infty[}(\min x_i)$$ Le modèle n'est pas exponentiel car ${\bf
+1}_{[\theta, \infty[}(\min x_i)$ dépend à la fois des paramètres
+et des observations, et ne peut être écrit sous forme
+exponentielle.
+
+\vspace{2mm}
+
+
+\ni {\bf 2.3. Mêmes questions avec une loi de Weibull} de
+param\`etres $\alpha$ et $\theta$ avec $\alpha > 1$, $\theta > 0$
+de densit\'e
+$$f(x) = \alpha \theta x^{\alpha -1} e^{- \theta x^{\alpha}} 1_{[0,
+\infty[}(x).$$
+
+\vspace{2mm}
+
+\ni Cette fois le paramètre du modèle est $(\alpha, \theta) \in
+\Theta = \R^{+*2}$. On a
+$$L_n(x) = \alpha^n \theta^n  \left( \Pi_{i=1}^n x_i \right)^{\alpha -1} \exp \left(- \theta \Sum_{i=1}^n x_i^{\alpha} \right)
+1_{[0,\infty[}(\min x_i).$$ En calculant $Log L_n$, on ne voit que
+lorsque $\alpha$ est inconnu, on ne peut écrire $L_n$ sous forme
+exponentielle, et on ne peut exhiber de statistique exhaustive
+autre que $T(X_1,...,X_n) = (X_1,...,X_n)$. En revanche, si
+$\alpha$ est connu, le modèle est exponentiel et $T(X) =
+\Sum_{i=1}^n X_i^{\alpha}$ est une statistique exhaustive.
+
+\vspace{2mm}
+
+\ni {\bf 2.4. M\^emes questions avec une loi uniforme} sur $[0,
+\theta]$ avec $\theta > 0$ inconnu. La fonction densité de la loi
+$\Uc_{[0, \theta]}$ est:
+$$f_{\Uc_{[0, \theta]}}(x) = \frac{1}{\theta} {\bf 1}_{x>0} {\bf 1}_{x<
+\theta}$$ et donc on a \beqs L_n(x) &=& \frac{1}{\theta^n} {\bf
+1}_{x_1,...,x_n>0} {\bf
+1}_{x_1,...x_n < \theta}\\
+&=& \frac{1}{\theta^n} {\bf 1}_{\min x_i >0} {\bf 1}_{\max x_i <
+\theta} \enqs Le modèle n'est pas exponentiel.
+
+\vspace{2mm}
+
+\exo Calculer l'information de Fisher dans les mod\`eles
+statistiques suivants :
+
+\ni {\bf 3.1. Une loi de Poisson de param\`etre $\lambda$}:
+
+$$P(X_1 = k) = e^{-\lambda} \frac{\lambda^k}{k!},\: ; k \in \N^*$$
+
+L'information de Fisher pour $n$ observations i.i.d. est égale à
+$n$ fois l'information de Fisher pour une observation. On se
+contente donc de calculer l'information de Fisher dans le cas $n =
+1$.
+
+\beqs L_1(x, \lambda) &=& e^{-\lambda} \frac{\lambda^x}{x!} \\
+\ln L_1(x, \lambda) &=& - \lambda + x \ln \lambda - \ln(x!) \\
+\frac{\partial \ln L_1}{\partial \lambda}(x, \lambda) &=& -1 + \frac{x}{\lambda}\\
+\frac{\partial^2 \ln L_1}{\partial \lambda^2}(x, \lambda) &=& -
+\frac{x}{\lambda^2} \enqs D'après cours: \beqs I_1(\lambda) &=& -
+E_{\lambda} \left[ \frac{\partial^2 L_1}{\partial \lambda^2}(X,
+\lambda)
+\right] \\
+&=& \frac{E_{\lambda}[X]}{\lambda^2} = \frac{1}{\lambda} \enqs
+d'où
+$$I_1(\lambda) = \frac{n}{\lambda}.$$
+
+ \vspace{2mm}
+
+\ni {\bf 3.2. Une loi de Pareto de param\`etres $\alpha$ et
+$\theta$} avec $\alpha > 1$, $\theta > 0$ de densit\'e
+
+$$f(x) = \frac{\alpha -1}{\theta} (\frac{\theta}{x})^{\alpha} {\bf 1}_{[\theta,
+\infty[}(x).$$
+
+\ni La vraisemblance n'est pas dérivable en $\theta$:
+l'information de Fisher n'est pas définie pour ce modèle. Si
+$\theta$ est une constante connue et non un paramètre à estimer,
+on peut calculer l'information de Fisher pour le modèle ``réduit''
+(paramétré par $\alpha$): \beqs \frac{\partial \ln  L_1}{\partial
+\lambda}(x, \alpha) &=& \frac{1}{\alpha - 1} + \ln \theta - \ln
+x\\
+\frac{\partial^2 \ln L_1}{\partial \alpha^2}(x, \alpha) &=& -
+\frac{1}{(\alpha - 1)^2} \enqs D'où $$I_1(\alpha) =
+\frac{1}{(\alpha - 1)^2}$$
+
+\vspace{2mm}
+
+\ni {\bf 3.3. Une loi de Weibull de param\`etres $\alpha$ et
+$\theta$} avec $\alpha > 1$, $\theta > 0$ de densit\'e
+$$f(x) = \alpha \theta x^{\alpha -1} e^{- \theta x^{\alpha}} 1_{[0,
+\infty[}(x).$$
+
+On a \beqs \ln L(x, \alpha, \theta) &=&  \ln \alpha + \ln \theta +
+(\alpha - 1) \ln x - \theta x^{\alpha} \\
+\frac{\partial^2 \ln L_1}{\partial \theta^2}(x, \alpha, \theta)
+&=& - \frac{1}{\theta^2} \\
+\frac{\partial^2 \ln L_1}{\partial \theta \partial \alpha}(x,
+\theta,\alpha) &=& - x^{\alpha} \ln x, \\
+\frac{\partial^2 \ln L_1}{\partial \alpha^2}(x, \alpha, \theta)
+&=& - \frac{1}{\alpha^2} - \theta x^{\alpha} (\ln x)^2 \enqs D'où,
+
+\beqs I_1(\alpha, \theta) &=& \left ( \begin{array}{cc}
+\frac{\partial^2 \ln L_1}{\partial \alpha^2} & \frac{\partial^2
+\ln L_1}{\partial \theta \partial \alpha}\\
+\frac{\partial^2 \ln L_1}{\partial \theta \partial \alpha} &
+\frac{\partial^2 \ln L_1}{\partial \theta^2} \end{array} \right)
+\\
+&=&  \left ( \begin{array}{cc} \frac{1}{(\alpha^2 + \theta
+E[X^{\alpha}(\ln X)^2]} &  E[X^{\alpha}\ln X]
+\\
+E[X^{\alpha}\ln X] & \frac{1}{\theta^2}
+\end{array} \right) \enqs
+
+\ni Remarque 1: Les expressions explicites de $E[X^{\alpha}(\ln
+X)^2]$ et $E[X^{\alpha}\ln X]$ peuvent évidemment être calculées,
+mais ici on peut s'en passer...
+
+\ni Remarque 2: Dans le sous-modèle dans lequel $\alpha$ est connu
+et $\theta$ inconnu, on a simplement: $$ I_1(\theta) =
+\frac{1}{\theta^2}$$
+
+\vspace{2mm}
+
+\ni {\bf 3.4. Une loi uniforme sur $[0; \theta]$} avec $\theta >
+0$ inconnu.
+
+\ni La vraisemblance du modèle est:
+$$L_n(x_1,...,x_n; \theta) = \frac{1}{\theta^n}{\bf 1}_{\min x_i \geq 0}{\bf 1}_{\max x_i \leq
+\theta}$$ donc la log-vraisemblance s'écrit pour $x \in [0,
+\theta]^n$: $$\ln L_n(x_1,...,x_n; \theta) = -n \ln \theta$$
+L'information de Fischer n'est pas défini la log-vraisemblance:
+$\theta \mapsto \log L_n(x_1,...,x_n; \theta)$ n'est pas définie
+(donc pas dérivable) au point $\theta = \max x_i$.
+
+
+
+\end{document}
